@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A Knowledge Base | IoTDeviceBus Consortium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .qa-card {
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-left: 4px solid var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+    .qa-card:hover {
+      transform: translateY(-2px);
+    }
+    .question {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .q-badge {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .answer {
+      font-size: 1.3rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      padding-left: 3rem;
+    }
+    .answer strong {
+      color: var(--text-primary);
+    }
+    .category-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .cat-tech { background: rgba(52, 168, 83, 0.2); color: var(--secondary-color); }
+    .cat-biz { background: rgba(251, 188, 4, 0.2); color: var(--accent-yellow); }
+    .cat-ai { background: rgba(234, 67, 53, 0.2); color: var(--accent-color); }
+    .cat-gov { background: rgba(26, 115, 232, 0.2); color: var(--primary-color); }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; Back to Portal</a>
+      <a href="../jp/qa.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">🌐 日本語版 &rarr;</a>
+    </div>
+    
+    <div class="doc-header">
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Q&A Knowledge Base</h1>
+      <h2 style="color: var(--text-secondary); font-size: 1.5rem; font-weight: 400;">Alphabet Foundation Pitch Review: Anticipated Questions & Expert Responses</h2>
+    </div>
+
+    <!-- Q1 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--secondary-color);">
+      <span class="category-badge cat-tech">Technical Differentiation</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--secondary-color);">Q1</span>
+        <span>How does IoTDeviceBus differ from existing standards (MQTT, CoAP, Matter)? Why is it necessary?</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: It solves a fundamentally different layer and target deployment environment.</strong></p>
+        <p>MQTT and CoAP are high-level IP protocols, not physical-layer or power-gating standards for edge sensors. Matter targets indoor smart homes with frequent AC/battery charging. IoTDeviceBus is an open edge infrastructure unifying physical sensor interfaces, 16-byte fixed TLV zero-parsing, and 100% event-driven 10μA power gating for harsh, uncrewed, multi-year battery deployments.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--accent-color);">
+      <span class="category-badge cat-ai">AI Methodology</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--accent-color);">Q2</span>
+        <span>What specifically is the "Hallucination-Free AI Development Practice" using Gemini / Antigravity?</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: Strict spec-context binding combined with real-time TDD in automated build & test pipelines.</strong></p>
+        <p>Hardware register maps and protocol specs are fed directly as prompt ground truth, eliminating speculative AI inferences. Generated C/C++ code is immediately compiled and tested in CMake/PlatformIO pipelines to catch and auto-correct bugs or spec deviations instantly.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--accent-yellow);">
+      <span class="category-badge cat-biz">Market & Ecosystem</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--accent-yellow);">Q3</span>
+        <span>What is the adoption incentive for competing hardware manufacturers?</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: A 70% reduction in dev engineering time and zero per-board redesign costs.</strong></p>
+        <p>By decoupling connectivity (Board A) from sensor interfaces (Board B), hardware vendors eliminate custom PCB redesigns per sensor type. Furthermore, our Impartial Board guarantees vendor-neutral governance, assuring manufacturers against lock-in.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--primary-color);">
+      <span class="category-badge cat-gov">Partnership</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--primary-color);">Q4</span>
+        <span>Why partner with or seek grant funding from Alphabet Foundation specifically?</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: To establish global public neutrality and world-class standardization leadership.</strong></p>
+        <p>A single startup cannot unilaterally establish a global standard. Combining with Alphabet’s public-interest branding, Android/Google Cloud ecosystem synergy, and global standardization clout creates a de facto standard trusted by developers worldwide.</p>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--accent-yellow);">
+      <span class="category-badge cat-biz">Capital Efficiency</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--accent-yellow);">Q5</span>
+        <span>Is $700K USD (¥105M JPY) sufficient over 2.5 years to reach foundation self-sustainability?</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: Yes. Core R&D is already complete; 100% of capital is deployed for global adoption and compliance.</strong></p>
+        <p>Real firmware on ESP32/STM32 is already verified (&lt;100ms latency, 100% auto-recovery in 19-burst tests). Capital is strictly allocated for reference kit manufacturing, CE/FCC safety certifications, the world Plugfest, and initial member onboarding, transitioning to member dues by Year 2.5.</p>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--secondary-color);">
+      <span class="category-badge cat-tech">Security & Resilience</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--secondary-color);">Q6</span>
+        <span>How does the architecture protect against cyber attacks or physical device failures at the edge?</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: Structural immunity via Zero-Parse fixed-length frames and physical isolation via power gating.</strong></p>
+        <p>16-byte fixed TLV formatting structurally eliminates buffer-overflow attack vectors. In addition, on detecting anomalous communication, self-diagnostics forcibly cut device power, isolating faulty edge nodes and preventing 100% of cascade failures.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

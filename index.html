@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IotDeviceBus Consortium | Language Selection Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .lang-card {
+      padding: 3.5rem 3rem;
+      border-radius: 28px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.4s ease;
+      border: 1px solid var(--glass-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .lang-card-jp:hover {
+      border-color: rgba(234, 67, 53, 0.5);
+      box-shadow: 0 20px 50px rgba(234, 67, 53, 0.2);
+    }
+    .lang-card-en:hover {
+      border-color: rgba(26, 115, 232, 0.5);
+      box-shadow: 0 20px 50px rgba(26, 115, 232, 0.2);
+    }
+    .flag-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-enter {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="portal-container" style="max-width: 1000px; text-align: center; padding-top: 6rem;">
+    <h1 class="portal-title gradient-text" style="font-size: 4rem;">IoTDeviceBus Consortium</h1>
+    <p class="portal-subtitle" style="margin: 0 auto 4rem auto; font-size: 1.6rem;">
+      Alphabet Foundation Pitch Deck & Executive Portal<br>
+      <span style="font-size: 1.2rem; opacity: 0.8;">Please select your preferred language / 言語を選択してください</span>
+    </p>
+
+    <div class="lang-card-grid">
+      <!-- 日本語 -->
+      <a href="jp/index.html" class="glass-panel lang-card lang-card-jp">
+        <div class="flag-icon">🇯🇵</div>
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">日本語版 (Japanese)</h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6;">
+          Alphabet社向けピッチスライド、エグゼクティブ・サマリー、Q&A想定問答集（日本語版ポータル）
+        </p>
+        <span class="btn-enter" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65; border: 1px solid rgba(234, 67, 53, 0.4);">
+          日本語ポータルへ入る &rarr;
+        </span>
+      </a>
+
+      <!-- English -->
+      <a href="en/index.html" class="glass-panel lang-card lang-card-en">
+        <div class="flag-icon">🇺🇸 / 🌐</div>
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">English Version</h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6;">
+          Full pitch deck, executive summary, and Q&A knowledge base tailored for Silicon Valley leadership.
+        </p>
+        <span class="btn-enter" style="background: rgba(26, 115, 232, 0.2); color: #82b1ff; border: 1px solid rgba(26, 115, 232, 0.4);">
+          Enter English Portal &rarr;
+        </span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Summary | IoTDeviceBus Consortium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; Back to Portal</a>
+      <a href="../jp/executive-summary.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">🌐 日本語版 &rarr;</a>
+    </div>
+    
+    <div class="doc-header">
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Executive Summary</h1>
+      <h2 style="color: var(--text-secondary); font-size: 1.5rem; font-weight: 400;">IoTDeviceBus Consortium: Next-Generation Edge Infrastructure</h2>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">Vision</h2>
+      <p>Empower anyone to instantly build mission-critical IoT systems like LEGO blocks, even in harsh uncrewed environments lacking power and infrastructure.</p>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">Core Problem</h2>
+      <p>Traditional IoT development wastes 60%–70% of total engineering time on custom per-sensor drivers and un-standardized hobbyist boards. Polling-based architectures drain batteries, rendering multi-year uncrewed operation impossible.</p>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">Innovative Solution & Proven Verification</h2>
+      <ul>
+        <li><strong>Plug & Play (Zero-Parse Design):</strong> 16-byte fixed-length TLV format enables instant automatic node recognition, completely eliminating parsing overhead.</li>
+        <li><strong>Ultra-Low Power (100% Event-Driven):</strong> Dedicated interrupt line and power gating eliminate idle power draw, achieving extreme 10μA standby current.</li>
+        <li><strong>Empirically Proven Reliability:</strong> Measured interrupt latency &lt;100ms (avg 88.5ms), cold start in 16.5s, and 100% completion in 19-burst stress image transmission via self-healing auto-recovery.</li>
+      </ul>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">Hardware, AI Workflow & Governance Strategy</h2>
+      <p><strong>Universal Reference Kit:</strong> Modular evaluation hardware eliminating board redesign costs. Board A (Host connectivity: ESP32-S3, SimCom, Ublox, Nordic) paired with Board B (Bus interface: Industrial/Compact).</p>
+      <p><strong>AI-Collaborative (Gemini / Antigravity) Development:</strong> Pair-programming with AI agents enforcing hallucination-free practices to cut documentation and dev time while achieving 1/10th the bug rate.</p>
+      <p><strong>Failsafe Security:</strong> Autonomous recovery and power-gating isolation prevent local sensor faults from crashing whole systems.</p>
+      <p><strong>Three Pillars of Execution:</strong> Mission-Critical DNA (Shinkansen ATC safety architects), Dedicated Task Force (~4 engineering leaders), and an Impartial Board with Alphabet participation to guarantee neutral governance.</p>
+    </div>
+
+    <div class="glass-panel doc-section" style="border-left: 4px solid var(--accent-yellow);">
+      <h2 class="gradient-text-alt">The Ask & Roadmap</h2>
+      <p><strong>Initial Seed Funding:</strong> $700K USD (¥105 Million JPY)</p>
+      <ul>
+        <li>Reference Kit Development & Safety Certification (CE/FCC): $235K (¥35M)</li>
+        <li>Core Task Force Payroll (4 members x 2.5 yrs): $400K (¥60M)</li>
+        <li>General & Administrative Overhead: $65K (¥10M)</li>
+      </ul>
+      <p style="margin-top: 1rem;"><strong>2.5-Year Roadmap:</strong> Global reference kit distribution, passing impartial audits, and hosting the inaugural world Plugfest.</p>
+      <p style="margin-top: 1rem; font-weight: 600; color: var(--text-primary);">This seed investment establishes a self-sustaining global foundation and establishes IoTDeviceBus as the world de facto standard.</p>
+    </div>
+  </div>
+</body>
+</html>

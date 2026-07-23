@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A想定問答集 | IotDeviceBus Consortium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .qa-card {
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-left: 4px solid var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+    .qa-card:hover {
+      transform: translateY(-2px);
+    }
+    .question {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .q-badge {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .answer {
+      font-size: 1.3rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      padding-left: 3rem;
+    }
+    .answer strong {
+      color: var(--text-primary);
+    }
+    .category-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .cat-tech { background: rgba(52, 168, 83, 0.2); color: var(--secondary-color); }
+    .cat-biz { background: rgba(251, 188, 4, 0.2); color: var(--accent-yellow); }
+    .cat-ai { background: rgba(234, 67, 53, 0.2); color: var(--accent-color); }
+    .cat-gov { background: rgba(26, 115, 232, 0.2); color: var(--primary-color); }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; Back to Portal</a>
+      <a href="../en/qa.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">🌐 English Version &rarr;</a>
+    </div>
+    
+    <div class="doc-header">
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Q&A 想定問答集</h1>
+      <h2 style="color: var(--text-secondary); font-size: 1.5rem; font-weight: 400;">Alphabet Foundation ピッチ審議用・質問と回答（想定問答）</h2>
+    </div>
+
+    <!-- Q1 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--secondary-color);">
+      <span class="category-badge cat-tech">技術的差別化</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--secondary-color);">Q1</span>
+        <span>既存のIoT通信規格（MQTT, CoAP, Matter等）と何が違いますか？なぜIoTDeviceBusが必要なのですか？</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: 解決しようとしているレイヤーとターゲット環境が根本的に異なります。</strong></p>
+        <p>MQTTやCoAPは上位のIPプロトコルであり、物理層でのセンサー接続や省電力制御の統一規格ではありません。またMatterはスマートホーム（屋内・AC電源/頻繁な充電前提）に特化しています。</p>
+        <p>IoTDeviceBusは、<strong>無人環境・電池駆動（数年間）・超低消費電力（10μA待機）</strong>という過酷な現場で、センサーの物理接続・固定長TLVフォーマット（パース不要）・完全イベント駆動省電力を一貫して標準化するオープン・エッジインフラです。</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--accent-color);">
+      <span class="category-badge cat-ai">AI開発手法</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--accent-color);">Q2</span>
+        <span>「AI（Gemini/Antigravity）協働でハルシネーションを起こさない開発技法」とは具体的にどのようなものですか？</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: 仕様書コンテキストの厳格束縛と、自動ビルド・テスト環境によるリアルタイムフィードバック（TDD）の融合です。</strong></p>
+        <p>ハードウェアレジスタマップやプロトコル仕様をグランドトゥルース（正解データ）としてAIに直接提供し、曖昧な推論を排除します。さらに生成されたC/C++コードは即座にCMake/PlatformIOの自動テスト環境でコンパイル・実行され、バグや仕様差異をその場で検知・自己修正させるプロセスを構築しています。</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--accent-yellow);">
+      <span class="category-badge cat-biz">市場＆コンソーシアム</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--accent-yellow);">Q3</span>
+        <span>競合他社やハードウェアメーカーがIoTDeviceBusを採用するインセンティブは何ですか？</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: 開発工数の70%削減と、Universal Reference Kitによるモジュール互換性です。</strong></p>
+        <p>通信（Aボード）とインターフェース（Bボード）を分離・規格化することで、メーカー側は個別のセンサーごとに基板を再設計するコストを撲滅できます。さらに「中庸性評価委員会」により特定ベンダーのロックインを防止するため、安心して自社製品へ組込むことができます。</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--primary-color);">
+      <span class="category-badge cat-gov">パートナーシップ</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--primary-color);">Q4</span>
+        <span>なぜAlphabet Foundationとのパートナーシップ（助成・連携）が必要なのですか？</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: グローバルな公共性と、世界標準化に向けた中立的なリーダーシップを確立するためです。</strong></p>
+        <p>1スタートアップの独自規格では世界標準になり得ません。Alphabetの持つ「公共性・中立性のブランディング」「Android/Google Cloudエコシステムとの将来的な親和性」「グローバルな標準化推進力」と手を取り合うことで初めて、世界中の開発者が安心して採用できるデファクトスタンダードを構築できます。</p>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--accent-yellow);">
+      <span class="category-badge cat-biz">資金＆ロードマップ</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--accent-yellow);">Q5</span>
+        <span>1億500万円（約$700K USD）のシード資金で、2.5年間で本当に財団の自律運営まで到達できますか？</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: はい。コア開発・実証実験はすでに完了しているため、本資金は「世界普及・標準化承認」に特化投下されます。</strong></p>
+        <p>すでにESP32/STM32実機にて100ms未満応答・19連射自己修復実証を完了しており、基礎研究費はゼロです。今回の調達額は「Reference Kitの量産配布」「CE/FCC等の安全認証」「世界初のPlugfest開催」「初期コンソーシアム会員獲得」に集中されるため、2.5年後には会員会費と認証ライセンス収入による完全自律運営へ移行可能です。</p>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="glass-panel qa-card" style="border-left-color: var(--secondary-color);">
+      <span class="category-badge cat-tech">セキュリティ＆堅牢性</span>
+      <div class="question">
+        <span class="q-badge" style="background: var(--secondary-color);">Q6</span>
+        <span>末端のIoTデバイスからの不正侵入やサイバー攻撃、物理的な故障への対策はどうなっていますか？</span>
+      </div>
+      <div class="answer">
+        <p><strong>A: Zero-Parse（固定長16バイト）による構造的防御と、電源強制遮断による物理的隔離です。</strong></p>
+        <p>可変長パースを行わない16バイト固定フォーマットにより、バッファオーバーフロー等の攻撃ベクトルを構造的に無力化します。また、異常や不正通信を検出した場合は、自己診断機能と「電源強制遮断（自律リカバリー）」により対象デバイスを物理的に切断するため、システム全体への被害波及を100%防ぎます。</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

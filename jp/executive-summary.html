@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Summary | IotDeviceBus Consortium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; Back to Portal</a>
+      <a href="../en/executive-summary.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">🌐 English Version &rarr;</a>
+    </div>
+    
+    <div class="doc-header">
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Executive Summary</h1>
+      <h2 style="color: var(--text-secondary); font-size: 1.5rem; font-weight: 400;">IotDeviceBus Consortium: 次世代エッジインフラストラクチャ</h2>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">ビジョン</h2>
+      <p>電源やインフラのない過酷な環境でも、誰もがレゴブロックのように高度なIoTシステムを即座に構築できる世界を作る。</p>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">解決すべき課題</h2>
+      <p>現在のIoT開発は、アマチュアレベルの部品依存やセンサーごとの複雑なドライバ開発により、総開発時間の60%〜70%が奪われています。また、従来のポーリング方式では待機電力が大きく、長期間の無人電池駆動が困難です。</p>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">革新的なソリューション ＆ 実証成果</h2>
+      <ul>
+        <li><strong>Plug & Play (ゼロ・パース設計):</strong> 16バイトの固定長TLVフォーマットにより、デバイスを繋ぐだけで即座に自動認識。パース処理のオーバーヘッドを完全に排除します。</li>
+        <li><strong>Ultra-Low Power (完全イベント駆動):</strong> 独自の割り込み線と個別の電源制御により無駄な通信を排除。待機電流10μAという極限の省電力性を達成します。</li>
+        <li><strong>実証済みの高い堅牢性:</strong> 応答遅延100ms未満（平均88.5ms）、高速コールドスタート（16.5秒）、19連続画像送信の過酷テストでも自己修復により完遂率100%を誇ります。</li>
+      </ul>
+    </div>
+
+    <div class="glass-panel doc-section">
+      <h2 class="gradient-text">ハードウェア・AI開発 ＆ ガバナンス戦略</h2>
+      <p><strong>Universal Reference Kit:</strong> 市場ごとの基板再設計コストを完全に撲滅する評価ボード。LTE/WiFi通信に特化したAボード（ESP32-S3、SimCom、Ublox、Nordic等のモジュール対応）と、IoTDeviceBusの基本要素を集約したBボード（産業用・小型向け）で構成。</p>
+      <p><strong>AI協働（Gemini / Antigravity）爆速開発:</strong> 設計段階からAIエージェントを活用し、ハルシネーションを防ぐ開発技法により、開発資料作成・アプリ設計の工数削減とバグ発生率1/10を実現。</p>
+      <p><strong>絶対的なフェイルセーフ:</strong> 通信異常発生時の自律的リカバリー＆電源強制遮断により、システム全体をダウンさせず末端の異常のみを切り離すミッションクリティカルな堅牢性。</p>
+      <p><strong>卓越した実行力の3本柱:</strong> 「新幹線ATCシステム等の絶対安全設計の知見（Mission-Critical DNA）」「専任タスクフォース（4名程度のコアメンバー）」「中庸性評価委員会（Impartial Boardによる透明性の担保）」の3本柱で推進します。</p>
+    </div>
+
+    <div class="glass-panel doc-section" style="border-left: 4px solid var(--accent-yellow);">
+      <h2 class="gradient-text-alt">The Ask & Roadmap</h2>
+      <p><strong>初期調達額:</strong> 1億500万円 (約 $700K USD)</p>
+      <ul>
+        <li>リファレンスキット開発・安全規格承認費 (CE/FCC等): 3,500万円</li>
+        <li>専任チーム人件費 (4名 × 2.5年分): 6,000万円</li>
+        <li>一般管理費: 1,000万円</li>
+      </ul>
+      <p style="margin-top: 1rem;"><strong>2.5年間のマイルストーン:</strong> リファレンスキットの開発・承認、中庸性評価委員会の監査クリア、世界初の相互接続性試験（Plugfest）の開催。</p>
+      <p style="margin-top: 1rem; font-weight: 600; color: var(--text-primary);">この投資により、自律運営可能なグローバル財団を確立し、当技術を世界のデファクトスタンダードへと押し上げます。</p>
+    </div>
+  </div>
+</body>
+</html>

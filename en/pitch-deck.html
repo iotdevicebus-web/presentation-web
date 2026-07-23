@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoTDeviceBus Consortium | Alphabet Foundation Pitch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  
+  <div style="position: fixed; top: 2rem; left: 2rem; z-index: 1000;">
+      <a href="index.html" class="glass-panel" style="padding: 0.8rem 1.5rem; text-decoration: none; color: var(--text-primary); border-radius: 12px; font-size: 1rem; font-weight: 600;">&larr; Portal</a>
+      <a href="../jp/pitch-deck.html" class="glass-panel" style="padding: 0.8rem 1.5rem; text-decoration: none; color: var(--text-primary); border-radius: 12px; font-size: 1rem; font-weight: 600; margin-left: 0.5rem;">🌐 日本語</a>
+  </div>
+
+  <div class="scrolling-deck">
+      
+      <!-- ==================== INTRODUCTION ==================== -->
+      <section class="scroll-slide bg-ki">
+        <div class="slide-content">
+          <div class="chapter-badge badge-ki reveal-element">Introduction</div>
+          <h2 class="reveal-element delay-1" style="font-size: 2rem; color: var(--text-secondary); margin-bottom: 1rem;">Ways to Enjoy IoT</h2>
+          <h1 class="mega-text gradient-text-ki reveal-element delay-2">IoTDeviceBus<br>Consortium</h1>
+          
+          <div class="glass-panel reveal-element delay-3" style="margin-top: 4rem; max-width: 900px; border-color: rgba(234, 67, 53, 0.3);">
+            <p style="font-size: 2.2rem; line-height: 1.4; color: #fff;">
+              Rocket-starting solutions for global social challenges<br>
+              <strong style="color: var(--accent-color);">with an intuitive, open-edge infrastructure for everyone.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== DILEMMA ==================== -->
+      <section class="scroll-slide bg-ki">
+        <div class="slide-content slide-split">
+          <div>
+            <div class="chapter-badge badge-ki reveal-element">Dilemma</div>
+            <h2 class="huge-text reveal-element delay-1">Current IoT Development<br>Has Reached Its Limit</h2>
+            <p class="reveal-element delay-2" style="font-size: 1.8rem; margin-top: 2rem;">The market demands instant system deployment in harsh environments lacking power and infrastructure. Reality falls short.</p>
+            <div class="reveal-element delay-3" style="margin-top: 2rem; padding: 1.5rem; background: rgba(234, 67, 53, 0.1); border-left: 4px solid var(--accent-color); border-radius: 0 8px 8px 0;">
+              <p style="font-size: 1.6rem; margin-bottom: 1rem;">Current IoT system development relies on piecing together amateur-level components.</p>
+              <p style="font-size: 1.6rem; margin-bottom: 1.5rem;">Sensors connected to embedded systems frequently use hobbyist boards like Raspberry Pi or Arduino without industrial reliability.</p>
+              <p style="font-size: 1.8rem; font-weight: bold; color: var(--accent-yellow);">Building a professional-grade environment rapidly is an urgent necessity.</p>
+            </div>
+          </div>
+          <div class="glass-panel reveal-element delay-3">
+            <h3 style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1.5rem;">70% Wasted</h3>
+            <p style="font-size: 1.5rem; margin-bottom: 2rem;">Development time consumed by custom per-sensor driver coding and wasteful protocol handling.</p>
+            <h3 style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1.5rem;">Power Drain</h3>
+            <p style="font-size: 1.5rem;">Traditional polling architectures drain batteries, making multi-year uncrewed operation impossible.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== BREAKTHROUGH ==================== -->
+      <section class="scroll-slide bg-sho">
+        <div class="slide-content">
+          <div class="chapter-badge badge-sho reveal-element">Breakthrough</div>
+          <h2 class="huge-text gradient-text reveal-element delay-1">Unmatched Simplicity &<br>Ultra-Low Power</h2>
+          
+          <div class="reveal-element delay-2" style="max-width: 900px; margin-top: 2.5rem; border-left: 4px solid var(--secondary-color); padding-left: 1.5rem;">
+            <p style="font-size: 1.8rem; margin-bottom: 1rem;">True IoT devices must operate on <strong style="color: var(--text-primary);">ultra-low power</strong>, enabling continuous multi-year operation on battery power.</p>
+            <p style="font-size: 1.8rem;">Standardization must eliminate processing overhead. <strong style="color: var(--secondary-color);">Adopting a TLV format is the definitive solution.</strong></p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem;">
+            <div class="glass-panel reveal-element delay-3">
+              <h3 style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 1.5rem;">Zero-Parse Architecture</h3>
+              <p>16-byte fixed-length TLV format. True <strong>Plug & Play</strong> recognition upon connection, eliminating parsing overhead entirely.</p>
+            </div>
+            <div class="glass-panel reveal-element delay-4">
+              <h3 style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 1.5rem;">10μA Standby Current</h3>
+              <p>Dedicated interrupt line and individual power gating enable <strong>100% Event-Driven</strong> execution, eliminating idle power waste.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== HARDWARE STRATEGY ==================== -->
+      <section class="scroll-slide bg-sho">
+        <div class="slide-content slide-split">
+          <div class="reveal-element">
+            <img src="../../board_top.png" alt="Reference Board" class="slide-image" style="border: 2px solid var(--secondary-color);">
+            <p style="font-size: 1.2rem; color: var(--text-secondary); text-align: center; margin-top: 1rem; line-height: 1.4;">
+              Universal Reference Kit<br>
+              A Board [ESP32-S3 + SimCom SIM76270G] + B Board [Small IoTDeviceBus 8-port]
+            </p>
+          </div>
+          <div>
+            <div class="chapter-badge badge-sho reveal-element delay-1">Hardware Strategy</div>
+            <h2 class="huge-text reveal-element delay-2">Modular Reference Design</h2>
+            <div class="reveal-element delay-3" style="margin: 2rem 0;">
+              <p style="font-size: 1.6rem; margin-bottom: 1rem;">Eliminating per-market board redesign costs with the <strong>Universal Reference Kit</strong>.</p>
+              <p style="font-size: 1.6rem; padding: 1.5rem; background: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color); border-radius: 0 8px 8px 0;">We designed low-cost evaluation kits to immediately realize IoTDeviceBus: Board A (right) focused purely on IoT connectivity, and Board B (left) consolidating core bus elements.</p>
+            </div>
+            
+            <ul class="bullet-list reveal-element delay-4">
+              <li><strong>Board A (Host):</strong> Specialized connectivity host board (LTE/WiFi). Releasing multiple host options familiar to developers, including ESP32-S3, SimCom LTE, Ublox LTE, and Nordic nRF91 series.</li>
+              <li><strong>Board B (Bus):</strong> Standardizing two forms: Industrial-grade and Compact-grade bus interfaces.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== FAILSAFE ==================== -->
+      <section class="scroll-slide bg-sho">
+        <div class="slide-content">
+          <div class="chapter-badge badge-sho reveal-element">Failsafe</div>
+          <h2 class="huge-text reveal-element delay-1">Zero Freeze in<br>Uncrewed Environments</h2>
+          
+          <div class="reveal-element delay-2" style="max-width: 900px; margin-top: 2.5rem; border-left: 4px solid var(--secondary-color); padding-left: 1.5rem;">
+            <p style="font-size: 1.8rem; margin-bottom: 1rem;">In mission-critical uncrewed deployments, unexpected device freezing is the single greatest risk.</p>
+            <p style="font-size: 1.8rem;">To mitigate this risk, we implemented self-diagnostic and notification features optimized for low-power operation.</p>
+          </div>
+
+          <div class="highlight-box reveal-element delay-3" style="border-left-color: var(--secondary-color); background: rgba(52, 168, 83, 0.05);">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Autonomous Recovery & Self-Diagnostics</h3>
+            <p>On communication fault, power is forcibly gated to isolate faulty nodes. Keeps the system operational without full system crashes—<strong>Mission-Critical Resilience</strong>.</p>
+          </div>
+
+          <!-- Empirical Proof Metrics -->
+          <div class="reveal-element delay-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem;">
+            <div class="glass-panel" style="text-align: center; padding: 1.5rem 1rem;">
+              <h4 style="font-size: 2.6rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">&lt; 100ms</h4>
+              <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 600;">Interrupt Latency</p>
+              <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.3rem;">Measured avg 88.5ms</p>
+            </div>
+            <div class="glass-panel" style="text-align: center; padding: 1.5rem 1rem;">
+              <h4 style="font-size: 2.6rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">16.5s</h4>
+              <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 600;">Cold Start Time</p>
+              <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.3rem;">Fast resume optimized</p>
+            </div>
+            <div class="glass-panel" style="text-align: center; padding: 1.5rem 1rem;">
+              <h4 style="font-size: 2.6rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">100%</h4>
+              <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 600;">Stress Test Success</p>
+              <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.3rem;">19-burst auto-recovery</p>
+            </div>
+            <div class="glass-panel" style="text-align: center; padding: 1.5rem 1rem;">
+              <h4 style="font-size: 2.6rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">10μA</h4>
+              <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 600;">Standby Current</p>
+              <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.3rem;">100% Event-Driven</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PARADIGM SHIFT ==================== -->
+      <section class="scroll-slide bg-ten">
+        <div class="slide-content slide-split">
+          <div>
+            <div class="chapter-badge badge-ten reveal-element">Paradigm Shift</div>
+            <h2 class="huge-text gradient-text-alt reveal-element delay-1">AI-Collaborative<br>Rapid Development</h2>
+            
+            <div class="reveal-element delay-2" style="margin-top: 2rem;">
+              <p style="font-size: 1.6rem; margin-bottom: 1rem;">The major bottleneck in IoT development is the massive engineering effort required from prototyping to mass production.</p>
+              <p style="font-size: 1.6rem; margin-bottom: 1rem;">We proactively leverage <strong>AI (Gemini / Antigravity)</strong> from the design phase, conducting pair-programming with AI agents to automate documentation and application architecture.</p>
+              <p style="font-size: 1.6rem;">By enforcing hallucination-free development practices, we eliminate hardware-specific traps, vendor lock-in, and achieve rapid verification with robust system resilience.</p>
+            </div>
+
+            <p class="reveal-element delay-3" style="font-size: 1.8rem; margin-top: 2.5rem; padding: 1.5rem; background: rgba(251, 188, 4, 0.1); border-left: 4px solid var(--accent-yellow); color: var(--accent-yellow); font-weight: bold; border-radius: 0 8px 8px 0;">
+              Realized at a fraction of traditional dev time with 1/10th the bug rate.
+            </p>
+          </div>
+          <div class="reveal-element delay-4">
+             <img src="../../ai_human_collaboration.png" alt="AI Collaboration" class="slide-image" style="border: 2px solid var(--accent-yellow);">
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== MARKET & STANDARD ==================== -->
+      <section class="scroll-slide bg-ten">
+        <div class="slide-content">
+          <div class="chapter-badge badge-ten reveal-element">Market & Standard</div>
+          <h2 class="huge-text reveal-element delay-1">Dual-Track Strategy &<br>Global Standardization</h2>
+          
+          <div class="reveal-element delay-2" style="max-width: 900px; margin-top: 2.5rem; border-left: 4px solid var(--accent-yellow); padding-left: 1.5rem;">
+            <p style="font-size: 1.8rem; margin-bottom: 1rem;">To succeed, this project requires a strong foundation focusing on public interest and a dedicated organization for IoTDeviceBus standardization.</p>
+            <p style="font-size: 1.8rem;">We execute by prioritizing these twin pillars.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem;">
+            <div class="glass-panel reveal-element delay-3">
+              <h3 style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem;">Social & Commercial</h3>
+              <p>Gain global recognition through public disaster prevention (landslide/water level monitoring), then scale sustainable B2B revenue in machinery diagnostics and cold chain logistics.</p>
+            </div>
+            <div class="glass-panel reveal-element delay-4">
+              <h3 style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem;">Open Consortium</h3>
+              <p>Prevent single-vendor lock-in. Establish de facto global standards via technical committee core libraries and regular interoperability Plugfests.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== EXECUTION ==================== -->
+      <section class="scroll-slide bg-ketsu">
+        <div class="slide-content">
+          <div class="chapter-badge badge-ketsu reveal-element">Execution</div>
+          <h2 class="huge-text gradient-text reveal-element delay-1">Exceptional Execution &<br>Governance</h2>
+          
+          <div class="reveal-element delay-2" style="max-width: 900px; margin-top: 2.5rem; border-left: 4px solid var(--primary-color); padding-left: 1.5rem;">
+            <p style="font-size: 1.8rem; margin-bottom: 1rem;">Scaling IoTDeviceBus globally demands three essential pillars.</p>
+            <p style="font-size: 1.8rem;"><strong>"Deep Technical Experience," "Specialized Core Talent," and "Public-Grade Neutral Evaluation."</strong></p>
+          </div>
+
+          <ul class="bullet-list reveal-element delay-3" style="margin-top: 4rem;">
+            <li><strong>Mission-Critical DNA:</strong> Led by architects with proven track records in bullet train (Shinkansen) ATC safety design and global telecom standards.</li>
+            <li><strong>Dedicated Task Force:</strong> Mobilizing ~4 core engineering leaders fully committed (>30% workload allocation).</li>
+            <li><strong>Impartial Evaluation Board:</strong> Partnering with Alphabet evaluation teams to ensure absolute transparency and vendor-neutral governance.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== THE ASK ==================== -->
+      <section class="scroll-slide bg-ketsu">
+        <div class="slide-content">
+          <div class="chapter-badge badge-ketsu reveal-element">The Ask</div>
+          <h2 class="mega-text reveal-element delay-1">$700K USD</h2>
+          <h3 class="reveal-element delay-2" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 3rem;">(¥105 Million JPY) Initial Funding</h3>
+          
+          <div class="glass-panel reveal-element delay-3" style="border-color: rgba(26, 115, 232, 0.3);">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+              <div>
+                <h4 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #fff;">Use of Funds</h4>
+                <ul class="bullet-list" style="font-size: 1.4rem !important;">
+                  <li>Reference Kit Dev & Certification (CE/FCC): $235K (¥35M)</li>
+                  <li>Core Task Force Payroll (4 members x 2.5 yrs): $400K (¥60M)</li>
+                  <li>Operations & General Admin: $65K (¥10M)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #fff;">2.5-Year Roadmap</h4>
+                <p style="font-size: 1.4rem;">Distribute global reference kits, pass impartial audits, and host the inaugural world Plugfest within 30 months.</p>
+                <p style="font-size: 1.6rem; margin-top: 1.5rem; font-weight: bold; color: var(--primary-color);">This seed investment establishes a self-sustaining global foundation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      const revealElements = document.querySelectorAll('.reveal-element');
+      revealElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

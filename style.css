@@ -1,0 +1,287 @@
+:root {
+  --primary-color: #1a73e8; 
+  --secondary-color: #34a853; 
+  --accent-color: #ea4335; 
+  --accent-yellow: #fbbc04; 
+  --bg-color: #0b0f19;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px 0 rgba(26, 115, 232, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Typography & Gradients */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+.huge-text {
+  font-size: 5rem !important;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+}
+
+.mega-text {
+  font-size: 8rem !important;
+  letter-spacing: -4px;
+  margin-bottom: 1rem;
+  line-height: 0.9;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(90deg, #ea4335, #fbbc04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-ki {
+  background: linear-gradient(90deg, #ea4335, #ff8a65);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Chapter Backgrounds */
+.bg-ki {
+  background: radial-gradient(circle at top left, rgba(234, 67, 53, 0.15), var(--bg-color) 60%);
+}
+.bg-sho {
+  background: radial-gradient(circle at center right, rgba(52, 168, 83, 0.15), var(--bg-color) 70%);
+}
+.bg-ten {
+  background: radial-gradient(circle at bottom left, rgba(251, 188, 4, 0.15), rgba(156, 39, 176, 0.1), var(--bg-color) 80%);
+}
+.bg-ketsu {
+  background: radial-gradient(circle at top right, rgba(26, 115, 232, 0.2), var(--bg-color) 60%);
+}
+
+/* Chapter Badge */
+.chapter-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+.badge-ki { color: #ea4335; border-color: rgba(234, 67, 53, 0.4); }
+.badge-sho { color: #34a853; border-color: rgba(52, 168, 83, 0.4); }
+.badge-ten { color: #fbbc04; border-color: rgba(251, 188, 4, 0.4); }
+.badge-ketsu { color: #1a73e8; border-color: rgba(26, 115, 232, 0.4); }
+
+/* Scrolling Deck */
+.scrolling-deck {
+  width: 100%;
+}
+
+.scroll-slide {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrolling-deck p, .scrolling-deck li {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.scrolling-deck strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.slide-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.slide-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.slide-image {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.5s ease;
+}
+
+.slide-image:hover {
+  transform: scale(1.03);
+}
+
+.bullet-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem !important;
+}
+
+.bullet-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border-left: 6px solid var(--primary-color);
+  padding: 2.5rem;
+  border-radius: 0 16px 16px 0;
+  margin: 3rem 0;
+  font-size: 1.8rem;
+}
+
+/* Scroll Animations */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal-element.delay-1 { transition-delay: 0.1s; }
+.reveal-element.delay-2 { transition-delay: 0.2s; }
+.reveal-element.delay-3 { transition-delay: 0.4s; }
+.reveal-element.delay-4 { transition-delay: 0.6s; }
+
+.reveal-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Portal & Document Layouts */
+.portal-container, .doc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.portal-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.portal-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.portal-card {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: block;
+  padding: 2.5rem;
+}
+
+.portal-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.portal-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.portal-card p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.doc-header {
+  margin-bottom: 3rem;
+}
+
+.doc-section {
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+}
+
+.doc-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.doc-section p, .doc-section li {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.doc-section strong {
+  color: var(--text-primary);
+}
