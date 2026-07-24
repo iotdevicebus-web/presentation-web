@@ -285,3 +285,67 @@ h1, h2, h3, h4 {
 .doc-section strong {
   color: var(--text-primary);
 }
+
+/* Print Settings & Page Breaks */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 1cm;
+  }
+
+  body {
+    background-color: #0b0f19 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide fixed navigation buttons and portal links when printing */
+  div[style*="position: fixed"],
+  .portal-card .btn-enter,
+  a[href*="index.html"] {
+    display: none !important;
+  }
+
+  /* Ensure all reveal animation elements are fully visible */
+  .reveal-element {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Pitch Deck Slide Page Break Settings (1 slide per printed page) */
+  .scroll-slide {
+    min-height: 100vh !important;
+    height: 100vh !important;
+    box-sizing: border-box !important;
+    padding: 2rem 5% !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .scroll-slide:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  /* Prevent awkward page splits inside sections, glass panels, and QA cards */
+  .doc-section, 
+  .qa-card, 
+  .glass-panel,
+  .highlight-box {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Utility class for explicit manual page breaks */
+  .page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+}
