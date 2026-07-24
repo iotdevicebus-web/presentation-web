@@ -290,7 +290,7 @@ h1, h2, h3, h4 {
 @media print {
   @page {
     size: A4 landscape;
-    margin: 12mm;
+    margin: 10mm;
   }
 
   body {
@@ -298,16 +298,34 @@ h1, h2, h3, h4 {
     color: #ffffff !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    overflow: visible !important;
   }
 
-  /* Hide fixed navigation buttons and portal links when printing */
+  /* Hide navigation, portal buttons, and fixed elements */
   div[style*="position: fixed"],
   .portal-card .btn-enter,
   a[href*="index.html"] {
     display: none !important;
   }
 
-  /* Fix gradient text top-clipping bug in Chromium print engine */
+  /* Force all reveal animation elements to be fully visible and un-transformed */
+  .reveal-element {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Disable backdrop-filter and text gradients (fixes Chrome print PDF rasterization & clipping bugs) */
+  .glass-panel,
+  .chapter-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
   .gradient-text,
   .gradient-text-alt,
   .gradient-text-ki {
@@ -316,41 +334,60 @@ h1, h2, h3, h4 {
     background-clip: initial !important;
     -webkit-text-fill-color: initial !important;
     color: #ffffff !important;
+    display: block !important;
+    width: 100% !important;
   }
 
-  /* Heading & Title Print Scaling (Prevent Clipping & Reduce Size) */
+  /* Global Heading Scaling for Print */
   h1, h2, h3, h4 {
-    line-height: 1.25 !important;
-    padding-top: 0.2rem !important;
+    line-height: 1.3 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    overflow: visible !important;
   }
 
   .mega-text {
-    font-size: 3.8rem !important;
-    line-height: 1.15 !important;
-    margin-bottom: 1.2rem !important;
-    letter-spacing: -1px !important;
+    font-size: 2.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: normal !important;
+    display: block !important;
+    width: 100% !important;
   }
 
   .huge-text {
-    font-size: 2.8rem !important;
-    line-height: 1.2 !important;
+    font-size: 2.2rem !important;
+    line-height: 1.3 !important;
     margin-bottom: 1rem !important;
-    letter-spacing: -0.5px !important;
+    letter-spacing: normal !important;
+    display: block !important;
+    width: 100% !important;
   }
 
   .chapter-badge {
-    margin-bottom: 1rem !important;
-    font-size: 1rem !important;
+    margin-bottom: 0.8rem !important;
+    font-size: 0.95rem !important;
     padding: 0.3rem 1rem !important;
+    display: inline-block !important;
   }
 
-  /* Pitch Deck Slide Print Layout (1 slide per page, no clipping) */
+  /* Pitch Deck Slide Layout for Print (1 slide per page, no clipping) */
+  .scrolling-deck {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
   .scroll-slide {
     min-height: 0 !important;
     height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
     box-sizing: border-box !important;
-    padding: 2rem 3rem !important;
+    padding: 1.2cm 1.5cm !important;
     display: block !important;
+    position: relative !important;
     page-break-after: always !important;
     break-after: page !important;
     page-break-inside: avoid !important;
@@ -363,33 +400,66 @@ h1, h2, h3, h4 {
   }
 
   .slide-content {
-    padding-top: 0.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
   }
 
   .slide-split {
-    gap: 3rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2.5rem !important;
+    align-items: flex-start !important;
+    width: 100% !important;
   }
 
-  /* Font size optimization for print readability */
+  .slide-split > div {
+    flex: 1 !important;
+    width: 50% !important;
+  }
+
+  .slide-image {
+    max-height: 260px !important;
+    object-fit: contain !important;
+    box-shadow: none !important;
+  }
+
+  /* Body Text & List Scaling for Print */
   .scrolling-deck p, .scrolling-deck li {
-    font-size: 1.2rem !important;
+    font-size: 1.05rem !important;
     line-height: 1.5 !important;
   }
 
   .bullet-list li {
-    font-size: 1.3rem !important;
-    margin-bottom: 0.8rem !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.6rem !important;
+    padding-left: 2rem !important;
   }
 
   .glass-panel {
-    padding: 1.8rem !important;
+    padding: 1.5rem !important;
     border-radius: 16px !important;
+    margin-bottom: 1rem !important;
   }
 
   .highlight-box {
-    padding: 1.5rem !important;
-    margin: 1.5rem 0 !important;
-    font-size: 1.3rem !important;
+    padding: 1.2rem !important;
+    margin: 1rem 0 !important;
+    font-size: 1.1rem !important;
+  }
+
+  /* Stat cards grid on slide 5 */
+  div[style*="grid-template-columns: repeat(4, 1fr)"] {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 1rem !important;
+  }
+
+  div[style*="grid-template-columns: repeat(4, 1fr)"] > div {
+    flex: 1 !important;
+    padding: 1rem 0.5rem !important;
   }
 
   /* Prevent awkward page splits inside sections and cards */
@@ -401,7 +471,6 @@ h1, h2, h3, h4 {
     break-inside: avoid !important;
   }
 
-  /* Utility class for explicit manual page breaks */
   .page-break {
     page-break-after: always !important;
     break-after: page !important;
