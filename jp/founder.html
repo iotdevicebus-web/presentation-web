@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>発案者・最高アーキテクト プロフィール | 北角 権太郎 (Gontaro Kitazumi)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .profile-hero {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding: 3rem;
+    }
+    .profile-img-container {
+      position: relative;
+      text-align: center;
+    }
+    .profile-img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 24px;
+      border: 3px solid var(--primary-color);
+      box-shadow: 0 20px 40px rgba(26, 115, 232, 0.3);
+      object-fit: cover;
+    }
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .badge-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      padding: 1.5rem;
+      border-radius: 16px;
+      border-left: 4px solid var(--accent-yellow);
+    }
+    .timeline-section {
+      margin-top: 3rem;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      border-left: 2px solid var(--primary-color);
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      box-shadow: 0 0 10px var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; ポータルへ戻る</a>
+      <a href="../en/founder.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">🌐 English Version &rarr;</a>
+    </div>
+
+    <!-- ヘッダー・プロファイルヒーロー -->
+    <div class="glass-panel profile-hero" style="border-left: 4px solid var(--primary-color);">
+      <div class="profile-img-container">
+        <img src="../images/gontaro.png" alt="北角 権太郎 (Gontaro Kitazumi)" class="profile-img">
+        <p style="margin-top: 1rem; font-weight: 700; color: var(--accent-yellow); font-size: 1.1rem;">北角 権太郎 (Gontaro Kitazumi)</p>
+      </div>
+      <div>
+        <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">創業者 ＆ 最高アーキテクト</span>
+        <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">北角 権太郎</h1>
+        <h2 style="font-size: 1.5rem; color: var(--secondary-color); font-weight: 600; margin-bottom: 1.5rem;">
+          株式会社 Control AD 研究開発所長<br>
+          元・米国赤外線データ協会 (IrDA USA) 会長 (President)
+        </h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary);">
+          世界規格 `IrTran-P`, `IrSimple`, `IrWW`, `IrBurst` の国際標準規格仕様書の著者であり、米国IrDA会長を牽引したグローバル標準化の権威。新幹線ATCシステムの絶対安全設計知見、AED自律診断や遠隔医療など21件以上の特許を保有し、早稲田大学・慶應義塾大学SDM客員研究員を歴任。
+        </p>
+      </div>
+    </div>
+
+    <!-- 主要実績バッジ -->
+    <div class="badge-grid">
+      <div class="badge-item">
+        <h3 style="font-size: 1.4rem; color: var(--accent-yellow); margin-bottom: 0.5rem;">🏆 元・米国IrDA 会長 (President)</h3>
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
+          米国赤外線データ協会 (IrDA) 技術委員会副議長を経て、2006年にIrDA会長(President)に就任。世界標準規格の国際的普及を主導。
+        </p>
+      </div>
+
+      <div class="badge-item" style="border-left-color: var(--secondary-color);">
+        <h3 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.5rem;">📖 世界通信標準規格の著者</h3>
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
+          数億台の機器に搭載された画像伝送規格 `IrTran-P`, 高速通信 `IrSimple`, 時計通信 `IrWW`, 大容量伝送 `IrBurst` 等の仕様書を単独・共同執筆。
+        </p>
+      </div>
+
+      <div class="badge-item" style="border-left-color: var(--primary-color);">
+        <h3 style="font-size: 1.4rem; color: var(--primary-color); margin-bottom: 0.5rem;">🎖️ 画像電子技術賞 2度受賞</h3>
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
+          1999年「IrTran-Pによるデジタルカメラ画像伝送規格の開発」、2005年「IrSimpleによる超高速赤外線通信技術の開発」により2度の技術賞を受賞。
+        </p>
+      </div>
+
+      <div class="badge-item" style="border-left-color: #e91e63;">
+        <h3 style="font-size: 1.4rem; color: #ff80ab; margin-bottom: 0.5rem;">💡 21件超の医療・安全特許</h3>
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
+          自動体外式除細動器(AED)のバッテリー自律状態診断、遠隔診療システム、集束超音波医療ナビゲーション等の発明者として21件以上の特許を取得。
+        </p>
+      </div>
+    </div>
+
+    <!-- 略歴と実績詳細 -->
+    <div class="glass-panel doc-section timeline-section" style="margin-top: 3rem;">
+      <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 2rem;">主要略歴と標準化・研究業績</h2>
+
+      <div class="timeline-item">
+        <h3 style="font-size: 1.5rem; color: #fff;">グローバル標準化団体での主導実績 (米国IrDA)</h3>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.5rem;">
+          米国赤外線データ協会 (Infrared Data Association, USA) において、Protocol副議長、Technical Committee副議長を歴任後、2006年に<strong>IrDA会長 (President)</strong> に就任。<br>
+          世界中の家電メーカー、携帯電話キャリア、半導体ベンダーとの調整を行い、`IrTran-P`（画像伝送）, `IrSimple`（高速通信）, `IrWW`（リストウォッチ規格）, `IrBurst` 等のグローバル標準化を完遂。
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3 style="font-size: 1.5rem; color: #fff;">ミッションクリティカル ＆ 人命保護システムの開発</h3>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.5rem;">
+          新幹線ATC（自動列車制御装置）システムの絶対安全・絶対停止ロジックの設計知見を基盤とし、救急医療現場での自動体外式除細動器(AED)における常時バッテリー状態診断技術や、遠隔診療システム、高精度医療ナビゲーションシステムを開発。
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3 style="font-size: 1.5rem; color: #fff;">学術・産学連携・客員研究実績</h3>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.5rem;">
+          ・<strong>早稲田大学</strong> 国際情報通信研究センター 客員研究員<br>
+          ・<strong>慶應義塾大学大学院</strong> システムデザイン・マネジメント研究科 (SDM) 客員研究員<br>
+          ・<strong>国立成育医療センター</strong> 臨床研究員<br>
+          先端通信、医療情報工学、システムデザイン論の分野で多数の共同研究・学術指導を実施。
+        </p>
+      </div>
+    </div>
+
+    <!-- 主な特許・著作一覧 -->
+    <div class="glass-panel doc-section" style="margin-top: 3rem;">
+      <h2 class="gradient-text-alt" style="font-size: 2.2rem; margin-bottom: 1.5rem;">主な特許 ＆ 国際標準規格書（抜粋）</h2>
+      <ul class="bullet-list" style="font-size: 1.1rem !important; line-height: 1.8;">
+        <li><strong>特許第5789231号:</strong> 自動体外式除細動器（AED）の自律的電源状態診断およびバックアップ切り替え制御システム</li>
+        <li><strong>特許第5621409号:</strong> 高信頼性分散ノードにおける異常検知および自律電源遮断フェイルセーフ回路</li>
+        <li><strong>特許第4892102号:</strong> 遠隔医療における高解像度生体データ非同期伝送・復元システム</li>
+        <li><strong>IrDA International Standard:</strong> `IrDA IrTran-P Specification Ver 1.0` (Author)</li>
+        <li><strong>IrDA International Standard:</strong> `IrDA IrSimple Protocol Specification Ver 1.0` (Co-Author)</li>
+        <li><strong>IrDA International Standard:</strong> `IrDA Wrist Watch (IrWW) Specification Ver 1.0` (Author)</li>
+      </ul>
+    </div>
+
+    <!-- メッセージ -->
+    <div class="glass-panel doc-section" style="margin-top: 3rem; border-left: 4px solid var(--accent-yellow); background: rgba(251, 188, 4, 0.05);">
+      <h2 style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem;">Universal IoT Bus (UIB) 創出に向けたメッセージ</h2>
+      <p style="font-size: 1.3rem; line-height: 1.8; color: var(--text-primary);">
+        「かつて赤外線通信で世界標準を作った時と同じように、現在の混乱したエッジIoTの世界に『誰もが直感的に扱えるシンプルで信頼性の高い世界標準』を打ち立てます。Gemini AIと日米欧アライアンスを掛け合わせることで、社会課題解決を世界中で加速させてまいります。」
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
