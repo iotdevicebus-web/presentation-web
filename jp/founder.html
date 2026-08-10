@@ -42,25 +42,25 @@
       border-radius: 16px;
       border-left: 4px solid var(--accent-yellow);
     }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-4px);
+    }
     .timeline-section {
       margin-top: 3rem;
-    }
-    .timeline-item {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 2rem;
-      border-left: 2px solid var(--primary-color);
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -7px;
-      top: 0;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      box-shadow: 0 0 10px var(--primary-color);
     }
   </style>
 </head>
@@ -85,7 +85,7 @@
           元・米国赤外線データ協会 (IrDA USA) 会長 (President)
         </h2>
         <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary);">
-          世界規格 `IrTran-P`, `IrSimple`, `IrWW`, `IrBurst` の国際標準規格仕様書の著者であり、米国IrDA会長を牽引したグローバル標準化の権威。新幹線ATCシステムの絶対安全設計知見、AED自律診断や遠隔医療など21件以上の特許を保有し、早稲田大学・慶應義塾大学SDM客員研究員を歴任。
+          100系新幹線ATC絶対安全設計、NEC/Agilent製IrDA LSI回路IP開発、警視庁洞爺湖サミット要人警護用無線、イージスシステム原理を応用したHIFU胎児治療ナビなど、ミッションクリティカル・最先端ハードウェア/ソフトウェア分野で伝説的な開発実績を持つ技術アーキテクト。世界規格 `IrTran-P`, `IrSimple`, `IrWW` の著者であり、米国IrDA会長を務めたグローバル標準化の第一人者。
         </p>
       </div>
     </div>
@@ -102,7 +102,7 @@
       <div class="badge-item" style="border-left-color: var(--secondary-color);">
         <h3 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.5rem;">📖 世界通信標準規格の著者</h3>
         <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
-          数億台の機器に搭載された画像伝送規格 `IrTran-P`, 高速通信 `IrSimple`, 時計通信 `IrWW`, 大容量伝送 `IrBurst` 等の仕様書を単独・共同執筆。
+          数億台の機器に搭載された画像伝送規格 `IrTran-P`, 高速通信 `IrSimple`, 時計通信 `IrWW`, 大容量伝送 `IrBurst` 等の仕様書を執筆。
         </p>
       </div>
 
@@ -121,9 +121,91 @@
       </div>
     </div>
 
+    <!-- 伝説的な主な開発経験履歴 (Detailed R&D Projects) -->
+    <div class="glass-panel doc-section" style="margin-top: 3rem;">
+      <h2 class="gradient-text" style="font-size: 2.4rem; margin-bottom: 1rem;">主な開発経験履歴（システムアーキテクチャ実績）</h2>
+      <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        社会インフラ・鉄道安全・国際通信LSI・警察医療通信・医療電子における代表的な開発・設計プロジェクト一覧です。
+      </p>
+
+      <div class="project-grid">
+        <!-- 1. 新幹線ATC -->
+        <div class="project-card" style="border-left: 4px solid var(--accent-yellow);">
+          <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.9rem;">社会インフラ・鉄道安全</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">100系新幹線用 車上ATC制御システム（JR東日本）</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            <strong>世界初、NEC製DSPを用いた信号解析制御ソフトを開発。</strong>軌条（線路）からの速度制御信号をDSPで高速読取り区間速度を検出。4系統・二重回路の多数決評価ロジック（3/4正常で運行継続、2系統故障で自動緊急停止）を構築し、新幹線の絶対安全運行を支えたフェイルセーフ設計。
+          </p>
+        </div>
+
+        <!-- 2. 地下鉄路上ATC -->
+        <div class="project-card" style="border-left: 4px solid var(--secondary-color);">
+          <span style="color: var(--secondary-color); font-weight: 700; font-size: 0.9rem;">信号解析・DSP/FFT</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">路上ATC試験システム（営団地下鉄 / 東京メトロ）</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            銀座線・丸ノ内線（第三軌条方式）と新型車両で混在する30種類以上の線路信号に対応。従来のハードウェアLC共振回路を廃し、線路信号をADC変換して<strong>DSP＋FFT処理（周波数解析）</strong>を行う革新的な解析装置を開発。ソフトウェア入替えのみで多種信号に対応。
+          </p>
+        </div>
+
+        <!-- 3. IrDA LSI -->
+        <div class="project-card" style="border-left: 4px solid var(--primary-color);">
+          <span style="color: var(--primary-color); font-weight: 700; font-size: 0.9rem;">半導体LSI・ハードウェアIP</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">IrDA LSI回路IP開発（NEC・米国アジレント）</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            115.2 kbps〜16 Mbpsの通信速度をカバーするハードウェアIPおよびLSIチップを開発。折り返し遅延を排除する<strong>ダブルバッファ方式回路</strong>を設計し、NEC初のノートPCへ搭載。米Agilent Technologiesブランドにてグローバル量産販売。
+          </p>
+        </div>
+
+        <!-- 4. 全二重無線 -->
+        <div class="project-card" style="border-left: 4px solid #e91e63;">
+          <span style="color: #ff80ab; font-weight: 700; font-size: 0.9rem;">警察・消防・要人警護</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">全二重式無線通話装置（警視庁・洞爺湖サミット）</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            マイクレスの密閉型イヤホン一体トランスデューサーにより、送話・受話を同時可能にした無線システム。<strong>警視庁の要人警護（洞爺湖サミットで採用）</strong>にて、周囲に気付かれない囁き声での本部通信を実現。東京消防庁・ソウル市消防庁での過酷騒音現場にも採用。
+          </p>
+        </div>
+
+        <!-- 5. HIFU胎児治療 -->
+        <div class="project-card" style="border-left: 4px solid #9c27b0;">
+          <span style="color: #ce93d8; font-weight: 700; font-size: 0.9rem;">先端医療・ビームフォーミング</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">強力重音波(HIFU)胎児治療システム（国立成育医療センター）</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            アレイ状に配置した9つの強力重音波トランスデューサーを、<strong>イージス艦レーダーと同じ位相制御（ビームフォーミング）原理</strong>で駆動。妊婦の開腹手術を行うことなく非侵襲で患部を切断・治療する革新的医療ナビゲーション。
+          </p>
+        </div>
+
+        <!-- 6. 8K内視鏡 -->
+        <div class="project-card" style="border-left: 4px solid #00bcd4;">
+          <span style="color: #80deea; font-weight: 700; font-size: 0.9rem;">医療映像・リアルタイム処理</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">8K内視鏡テレビモニタシステム（日本大学医学部）</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            8K超高精細内視鏡で撮影された医療画像を、遠隔・臨床モニタ上でリアルタイムに解像度劣化なく（8K〜1K範囲）拡大縮小表示する超高速画像処理システム。
+          </p>
+        </div>
+
+        <!-- 7. HONDA ECU -->
+        <div class="project-card" style="border-left: 4px solid #ff9800;">
+          <span style="color: #ffe0b2; font-weight: 700; font-size: 0.9rem;">自動車ECU・シミュレーション</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">エンジンコントローラ試験装置（本田技研工業 / HONDA）</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            アクセル、ブレーキ、燃料制御ソレノイド、ワイパー等の各種信号をリアルタイムシミュレーション出力し、10モード燃費走行や天候不順等の環境下で自動車ECUが正常動作するか検証する自動検査システム。
+          </p>
+        </div>
+
+        <!-- 8. 電光ニュース -->
+        <div class="project-card" style="border-left: 4px solid #4caf50;">
+          <span style="color: #a5d6a7; font-weight: 700; font-size: 0.9rem;">グラフィック表示・大画面制御</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">読売新聞・読売巨人軍 大型電光ニュースシステム</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            高輝度ネオン管電子制御による当時日本最大級のフルグラフィック電光表示板（16x16ドット・1.5m・8文字x4段）。読売ジャイアンツの試合経過・スコアをリアルタイムでアニメーション表示。
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- 略歴と実績詳細 -->
     <div class="glass-panel doc-section timeline-section" style="margin-top: 3rem;">
-      <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 2rem;">主要略歴と標準化・研究業績</h2>
+      <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 2rem;">主要略歴 ＆ 学術研究業績</h2>
 
       <div class="timeline-item">
         <h3 style="font-size: 1.5rem; color: #fff;">グローバル標準化団体での主導実績 (米国IrDA)</h3>
@@ -134,41 +216,20 @@
       </div>
 
       <div class="timeline-item">
-        <h3 style="font-size: 1.5rem; color: #fff;">ミッションクリティカル ＆ 人命保護システムの開発</h3>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.5rem;">
-          新幹線ATC（自動列車制御装置）システムの絶対安全・絶対停止ロジックの設計知見を基盤とし、救急医療現場での自動体外式除細動器(AED)における常時バッテリー状態診断技術や、遠隔診療システム、高精度医療ナビゲーションシステムを開発。
-        </p>
-      </div>
-
-      <div class="timeline-item">
         <h3 style="font-size: 1.5rem; color: #fff;">学術・産学連携・客員研究実績</h3>
         <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.5rem;">
           ・<strong>早稲田大学</strong> 国際情報通信研究センター 客員研究員<br>
           ・<strong>慶應義塾大学大学院</strong> システムデザイン・マネジメント研究科 (SDM) 客員研究員<br>
-          ・<strong>国立成育医療センター</strong> 臨床研究員<br>
-          先端通信、医療情報工学、システムデザイン論の分野で多数の共同研究・学術指導を実施。
+          ・<strong>国立成育医療センター</strong> 臨床研究員
         </p>
       </div>
-    </div>
-
-    <!-- 主な特許・著作一覧 -->
-    <div class="glass-panel doc-section" style="margin-top: 3rem;">
-      <h2 class="gradient-text-alt" style="font-size: 2.2rem; margin-bottom: 1.5rem;">主な特許 ＆ 国際標準規格書（抜粋）</h2>
-      <ul class="bullet-list" style="font-size: 1.1rem !important; line-height: 1.8;">
-        <li><strong>特許第5789231号:</strong> 自動体外式除細動器（AED）の自律的電源状態診断およびバックアップ切り替え制御システム</li>
-        <li><strong>特許第5621409号:</strong> 高信頼性分散ノードにおける異常検知および自律電源遮断フェイルセーフ回路</li>
-        <li><strong>特許第4892102号:</strong> 遠隔医療における高解像度生体データ非同期伝送・復元システム</li>
-        <li><strong>IrDA International Standard:</strong> `IrDA IrTran-P Specification Ver 1.0` (Author)</li>
-        <li><strong>IrDA International Standard:</strong> `IrDA IrSimple Protocol Specification Ver 1.0` (Co-Author)</li>
-        <li><strong>IrDA International Standard:</strong> `IrDA Wrist Watch (IrWW) Specification Ver 1.0` (Author)</li>
-      </ul>
     </div>
 
     <!-- メッセージ -->
     <div class="glass-panel doc-section" style="margin-top: 3rem; border-left: 4px solid var(--accent-yellow); background: rgba(251, 188, 4, 0.05);">
       <h2 style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem;">Universal IoT Bus (UIB) 創出に向けたメッセージ</h2>
       <p style="font-size: 1.3rem; line-height: 1.8; color: var(--text-primary);">
-        「かつて赤外線通信で世界標準を作った時と同じように、現在の混乱したエッジIoTの世界に『誰もが直感的に扱えるシンプルで信頼性の高い世界標準』を打ち立てます。Gemini AIと日米欧アライアンスを掛け合わせることで、社会課題解決を世界中で加速させてまいります。」
+        「かつて新幹線の安全制御や赤外線通信の世界標準を作った時と同じように、現在の混乱したエッジIoTの世界に『誰もが直感的に扱えるシンプルで信頼性の高い世界標準』を打ち立てます。Gemini AIと日米欧アライアンスを掛け合わせることで、社会課題解決を世界中で加速させてまいります。」
       </p>
     </div>
 

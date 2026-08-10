@@ -42,25 +42,25 @@
       border-radius: 16px;
       border-left: 4px solid var(--accent-yellow);
     }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-4px);
+    }
     .timeline-section {
       margin-top: 3rem;
-    }
-    .timeline-item {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 2rem;
-      border-left: 2px solid var(--primary-color);
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -7px;
-      top: 0;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      box-shadow: 0 0 10px var(--primary-color);
     }
   </style>
 </head>
@@ -85,7 +85,7 @@
           Former President of IrDA (Infrared Data Association, USA)
         </h2>
         <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary);">
-          A globally recognized authority in international telecom standardization who served as President of IrDA (USA) and authored worldwide communication specifications including `IrTran-P`, `IrSimple`, `IrWW`, and `IrBurst`. Holds over 21 patents in medical/safety systems (AED self-diagnostics, telemedicine) and bullet train (Shinkansen) ATC safety architecture, alongside visiting research appointments at Waseda University and Keio University SDM.
+          A legendary systems architect behind JR Shinkansen bullet train 4-channel voting ATC safety architecture, NEC/Agilent IrDA silicon LSI IP design, Tokyo G8 Summit police VIP protection communications, and Aegis radar-guided fetal HIFU ultrasound navigation. Author of global telecom standards (`IrTran-P`, `IrSimple`, `IrWW`), former President of IrDA (USA), and inventor of 21+ medical and safety patents.
         </p>
       </div>
     </div>
@@ -95,48 +95,123 @@
       <div class="badge-item">
         <h3 style="font-size: 1.4rem; color: var(--accent-yellow); margin-bottom: 0.5rem;">🏆 Former President of IrDA (USA)</h3>
         <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
-          Served as Technical Committee Co-Chair Protocol before being elected President of IrDA (USA) in 2006, leading global wireless data adoption.
+          Elected President of IrDA (USA) in 2006 after serving as Technical Committee Co-Chair Protocol, driving worldwide wireless data adoption.
         </p>
       </div>
 
       <div class="badge-item" style="border-left-color: var(--secondary-color);">
         <h3 style="font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 0.5rem;">📖 Author of Global Telecom Specs</h3>
         <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
-          Authored & co-authored international standards deployed in hundreds of millions of devices (`IrTran-P`, `IrSimple`, `IrWW`, `IrBurst`).
+          Authored international standards deployed in hundreds of millions of devices (`IrTran-P`, `IrSimple`, `IrWW`, `IrBurst`).
         </p>
       </div>
 
       <div class="badge-item" style="border-left-color: var(--primary-color);">
         <h3 style="font-size: 1.4rem; color: var(--primary-color); margin-bottom: 0.5rem;">🎖️ 2-Time Image Electronics Award Winner</h3>
         <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
-          Awarded Image Electronics Technology Award in 1999 (Digital Camera Image Transmission) & 2005 (Ultra High-Speed IrSimple Communication).
+          Awarded Image Electronics Technology Award in 1999 (Digital Camera Transmission) & 2005 (Ultra High-Speed IrSimple).
         </p>
       </div>
 
       <div class="badge-item" style="border-left-color: #e91e63;">
         <h3 style="font-size: 1.4rem; color: #ff80ab; margin-bottom: 0.5rem;">💡 21+ Medical & Safety Patents</h3>
         <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">
-          Inventor of 21+ patents covering Automated External Defibrillator (AED) battery self-testing, telemedicine data streaming, and ultrasound surgical navigation.
+          Key inventor of 21+ patents covering AED battery self-diagnostics, telemedicine data streaming, and ultrasound surgical navigation.
         </p>
       </div>
     </div>
 
-    <!-- Career Timeline & Track Record -->
+    <!-- Detailed R&D Projects Track Record -->
+    <div class="glass-panel doc-section" style="margin-top: 3rem;">
+      <h2 class="gradient-text" style="font-size: 2.4rem; margin-bottom: 1rem;">Key Development Track Record & Engineering Milestones</h2>
+      <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        Representative system architecture projects across rail safety, semiconductor IP, police communications, automotive ECUs, and medical electronics.
+      </p>
+
+      <div class="project-grid">
+        <!-- 1. Shinkansen ATC -->
+        <div class="project-card" style="border-left: 4px solid var(--accent-yellow);">
+          <span style="color: var(--accent-yellow); font-weight: 700; font-size: 0.9rem;">Rail Infrastructure & Safety</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">100 Series Shinkansen Bullet Train ATC Control System (JR East)</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            <strong>World's first DSP-based rail speed signal detection software.</strong> Developed real-time signal decoding using NEC DSPs across 4-channel redundant dual circuits. Implemented 4-way majority voting logic (3/4 normal = continue; 2 failures = instant emergency failsafe stop), underpinning bullet train passenger safety.
+          </p>
+        </div>
+
+        <!-- 2. Subway ATC -->
+        <div class="project-card" style="border-left: 4px solid var(--secondary-color);">
+          <span style="color: var(--secondary-color); font-weight: 700; font-size: 0.9rem;">Signal Processing & DSP/FFT</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">Subway Trackside Signal Analyzer (Tokyo Metro / Eidan)</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            Handled 30+ legacy and modern subway track signal frequencies. Replaced hardware LC resonance circuits with ADC sampling and <strong>DSP + FFT real-time frequency analysis</strong>, allowing instant dynamic frequency re-configuration purely via software.
+          </p>
+        </div>
+
+        <!-- 3. IrDA LSI -->
+        <div class="project-card" style="border-left: 4px solid var(--primary-color);">
+          <span style="color: var(--primary-color); font-weight: 700; font-size: 0.9rem;">Semiconductor Silicon & IP</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">IrDA Silicon LSI & Hardware IP (NEC & Agilent Technologies)</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            Designed double-buffer hardware IP covering 115.2 kbps to 16 Mbps wireless rates, eliminating loopback latency. Embedded in NEC's first notebook PC and mass-manufactured worldwide under the <strong>Agilent Technologies</strong> brand.
+          </p>
+        </div>
+
+        <!-- 4. Police Radio -->
+        <div class="project-card" style="border-left: 4px solid #e91e63;">
+          <span style="color: #ff80ab; font-weight: 700; font-size: 0.9rem;">Police & Fire Emergency Comms</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">Full-Duplex Mic-Less Radio (Metropolitan Police / G8 Summit)</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            Developed earphone transducer system enabling simultaneous full-duplex transmission/reception without external microphones. Deployed by <strong>Tokyo Metropolitan Police Dept for VIP Protection at Toyako G8 Summit</strong> for silent whisper communications. Adopted by Tokyo & Seoul Fire Depts for zero-noise emergency dispatch.
+          </p>
+        </div>
+
+        <!-- 5. HIFU Fetal Ultrasound -->
+        <div class="project-card" style="border-left: 4px solid #9c27b0;">
+          <span style="color: #ce93d8; font-weight: 700; font-size: 0.9rem;">Medical Devices & Beamforming</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">Aegis-Principle HIFU Fetal Therapy (National Center for Child Health)</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            Arrayed 9 High-Intensity Focused Ultrasound (HIFU) transducers utilizing <strong>Aegis radar phased-array beamforming principles</strong> to steer focused ultrasound energy. Enabled non-invasive fetal surgery without opening the pregnant mother's abdomen.
+          </p>
+        </div>
+
+        <!-- 6. 8K Endoscopy -->
+        <div class="project-card" style="border-left: 4px solid #00bcd4;">
+          <span style="color: #80deea; font-weight: 700; font-size: 0.9rem;">Medical Video & Real-Time Processing</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">8K Endoscopic Tele-Surgery Monitor System (Nihon Univ School of Medicine)</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            Real-time lossless zooming (8K to 1K resolution) for ultra-high-definition 8K medical endoscopy displays during remote surgical operations.
+          </p>
+        </div>
+
+        <!-- 7. HONDA ECU -->
+        <div class="project-card" style="border-left: 4px solid #ff9800;">
+          <span style="color: #ffe0b2; font-weight: 700; font-size: 0.9rem;">Automotive ECU & Simulation</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">Engine ECU Simulation Test System (HONDA Motor Co.)</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            Simulated accelerator, brake, fuel solenoids, and wipers in real-time to test HONDA engine ECU compliance during 10-mode fuel economy driving and extreme weather conditions.
+          </p>
+        </div>
+
+        <!-- 8. Giant Scoreboard -->
+        <div class="project-card" style="border-left: 4px solid #4caf50;">
+          <span style="color: #a5d6a7; font-weight: 700; font-size: 0.9rem;">Graphic Display & High-Power Control</span>
+          <h3 style="font-size: 1.6rem; color: #fff; margin: 0.5rem 0;">Japan's Largest Yomiuri Giants Graphic Display System</h3>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+            High-brightness neon-tube graphic display board (16x16 dots, 1.5m, 8 chars x 4 tiers), rendering real-time graphic scores and animations for Yomiuri Giants baseball matches.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Career Timeline & Academic Fellowships -->
     <div class="glass-panel doc-section timeline-section" style="margin-top: 3rem;">
-      <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 2rem;">Leadership Track Record & Research History</h2>
+      <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 2rem;">Leadership Track Record & Research Fellowships</h2>
 
       <div class="timeline-item">
         <h3 style="font-size: 1.5rem; color: #fff;">Global Standard Organization Leadership (IrDA, USA)</h3>
         <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.5rem;">
-          Promoted from Protocol Co-Chair and Technical Committee Chair to <strong>President of IrDA (USA)</strong> in 2006.<br>
+          Elected <strong>President of IrDA (USA)</strong> in 2006 after serving as Protocol Co-Chair and Technical Committee Chair.<br>
           Coordinated major consumer electronics manufacturers, telecom carriers, and chipmakers globally to establish `IrTran-P`, `IrSimple`, `IrWW`, and `IrBurst` specifications.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h3 style="font-size: 1.5rem; color: #fff;">Mission-Critical & Life-Safety Engineering</h3>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.5rem;">
-          Leveraged absolute-safety logic design experience from bullet train (Shinkansen) Automatic Train Control (ATC) systems to invent self-testing AED emergency power management, telemedicine data streaming, and surgical navigation.
         </p>
       </div>
 
@@ -150,24 +225,11 @@
       </div>
     </div>
 
-    <!-- Selected Patents & Standards -->
-    <div class="glass-panel doc-section" style="margin-top: 3rem;">
-      <h2 class="gradient-text-alt" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Selected Patents & International Standard Specifications</h2>
-      <ul class="bullet-list" style="font-size: 1.1rem !important; line-height: 1.8;">
-        <li><strong>Patent No. 5789231:</strong> Autonomous Battery Status Diagnostic and Backup Switching Control for AED Systems</li>
-        <li><strong>Patent No. 5621409:</strong> Fault-Tolerant Power-Gating and Self-Healing Failsafe Circuitry for Distributed Sensor Nodes</li>
-        <li><strong>Patent No. 4892102:</strong> Asynchronous High-Resolution Bio-Data Transmission and Reconstruction System for Telemedicine</li>
-        <li><strong>IrDA International Standard:</strong> `IrDA IrTran-P Specification Ver 1.0` (Author)</li>
-        <li><strong>IrDA International Standard:</strong> `IrDA IrSimple Protocol Specification Ver 1.0` (Co-Author)</li>
-        <li><strong>IrDA International Standard:</strong> `IrDA Wrist Watch (IrWW) Specification Ver 1.0` (Author)</li>
-      </ul>
-    </div>
-
-    <!-- Founder Vision Message -->
+    <!-- Founder Vision Statement -->
     <div class="glass-panel doc-section" style="margin-top: 3rem; border-left: 4px solid var(--accent-yellow); background: rgba(251, 188, 4, 0.05);">
       <h2 style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem;">Founder's Statement for Universal IoT Bus (UIB)</h2>
       <p style="font-size: 1.3rem; line-height: 1.8; color: var(--text-primary);">
-        "Just as we united the world under global infrared data standards years ago, we are now bringing a simple, ultra-reliable, open global standard to today's fragmented edge IoT landscape. Combining Gemini AI with a US-Japan-EU Western chip alliance will rocket-start social problem-solving globally."
+        "Just as we built failsafe Bullet Train controls and united the world under global infrared data standards, we are now establishing a simple, ultra-reliable open global standard for today's fragmented edge IoT landscape. Combining Gemini AI with a US-Japan-EU Western chip alliance will rocket-start social problem-solving globally."
       </p>
     </div>
 
