@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal IoT Bus (UIB) | Security & Defense Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .tab-container {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .tab-btn {
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      background: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 20px rgba(26, 115, 232, 0.3);
+    }
+    .audience-section {
+      display: none;
+    }
+    .audience-section.active {
+      display: block;
+    }
+    .sec-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .sec-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border-left: 4px solid var(--accent-yellow);
+    }
+    .tech-spec-box {
+      background: rgba(10, 25, 47, 0.6);
+      border: 1px solid rgba(26, 115, 232, 0.3);
+      border-radius: 16px;
+      padding: 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      color: #82b1ff;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; Back to Portal</a>
+      <a href="../jp/security.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">🌐 日本語版 &rarr;</a>
+    </div>
+
+    <!-- Header -->
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3rem;">
+      <span class="category-badge cat-sec" style="margin-bottom: 0.8rem; display: inline-block;">Zero-Trust 5-Layer Defense</span>
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Security & Defense Architecture</h1>
+      <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
+        Physical & AI Dual-Fortress for Mission-Critical Environments
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1rem;">
+        Universal IoT Bus (UIB) provides a robust Zero-Trust 5-Layer Security Framework from silicon to cloud, protecting uncrewed infrastructure against physical tampering, malware injection, and cyber attacks.
+      </p>
+    </div>
+
+    <!-- Audience View Tabs -->
+    <div class="tab-container">
+      <button class="tab-btn active" onclick="switchAudience('general')">💡 For General Audience (Intuitive Analogies)</button>
+      <button class="tab-btn" onclick="switchAudience('expert')">🔬 For Experts & Auditors (Crypto, Hardware & LL Specs)</button>
+    </div>
+
+    <!-- ==================== FOR GENERAL AUDIENCE ==================== -->
+    <div id="general-section" class="audience-section active">
+      <div class="glass-panel doc-section">
+        <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 1.5rem;">4 Core Reasons Why UIB Guarantees Absolute Peace of Mind</h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          How UIB overcomes legacy IoT vulnerabilities explained through simple everyday analogies.
+        </p>
+
+        <div class="sec-card-grid">
+          <!-- 1. Passport -->
+          <div class="sec-card" style="border-left-color: #4caf50;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🪪</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">1. Silicon Passport (Anti-Fake Device Check)</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>[Analogy: Unforgeable Biometric Passport]</strong><br>
+              Uses silicon-embedded fingerprint-like cryptographic keys. Blocks fake rogue devices or malicious code injections at the hardware door 100% of the time.
+            </p>
+          </div>
+
+          <!-- 2. Breaker -->
+          <div class="sec-card" style="border-left-color: #ff9800;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">2. Smart Circuit Breaker (&lt;100ms Isolation)</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>[Analogy: Home Electrical Fuse Breaker]</strong><br>
+              If an external sensor gets physically vandalized or infected, UIB physically cuts power to that specific port in under 0.1s, stopping blast radius contamination.
+            </p>
+          </div>
+
+          <!-- 3. Fixed Envelope -->
+          <div class="sec-card" style="border-left-color: #2196f3;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">✉️</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">3. Fixed-Size Mail Envelope (Zero Overflow)</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>[Analogy: Strict Mailbox Accepting Only Standard Letters]</strong><br>
+              Completely eliminates memory crash attacks (buffer overflows) by enforcing a strict 16-byte fixed header format that ignores suspicious arbitrary payload lengths.
+            </p>
+          </div>
+
+          <!-- 4. AI Guard -->
+          <div class="sec-card" style="border-left-color: #9c27b0;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">4. 24/7 Gemini AI Security Guard</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>[Analogy: AI Security Guard Watching Global Feeds]</strong><br>
+              Gemini AI monitors global telemetry 24/7. Upon detecting unknown zero-day anomalies, it automatically generates firmware security patches to defend edge nodes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FOR EXPERTS & AUDITORS ==================== -->
+    <div id="expert-section" class="audience-section">
+      <div class="glass-panel doc-section">
+        <h2 class="gradient-text-alt" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Zero-Trust 5-Layer Security Technical Specification</h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          In-depth technical architecture covering Hardware Root of Trust, LL(1) parsing, power-gating isolation, and crypto primitives.
+        </p>
+
+        <!-- 1. Hardware RoT -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: var(--primary-color); margin-bottom: 0.5rem;">Layer 1: Hardware Root of Trust (RoT) & PUF</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            Utilizes silicon manufacturing variations via <strong>Physically Unclonable Function (PUF)</strong> key generation paired with <strong>ARM TrustZone / RISC-V PMP</strong> memory protection. Verifies ECDSA-P256 signatures during Secure Boot, permanently blocking unauthorized firmware at boot time.
+          </p>
+          <div class="tech-spec-box">
+            Features: PUF Silicon Unique Key Generation | Secure Boot (ECDSA-P256) | Memory Protection Unit (MPU/PMP)
+          </div>
+        </div>
+
+        <!-- 2. Zero-Parse -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: var(--secondary-color); margin-bottom: 0.5rem;">Layer 2: LL(1) Grammar Zero-Parse Protocol Defense</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            Enforces 16-byte fixed TLV header streaming via <strong>LL(1) Deterministic Top-Down Parsing</strong>. Eliminates dynamic memory allocations (`malloc`), completing parsing in constant time O(1) and mathematically eradicating buffer overflow remote code execution (RCE) vectors.
+          </p>
+          <div class="tech-spec-box">
+            Grammar Class: LL(1) Deterministic Top-Down | Time Complexity: O(1) Constant | Dynamic Alloc (malloc): 0 Bytes
+          </div>
+        </div>
+
+        <!-- 3. Power-Gating Isolation -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: var(--accent-yellow); margin-bottom: 0.5rem;">Layer 3: Autonomous Hardware Power-Gating Port Isolation (&lt;100ms)</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            Independent Load Switch ICs on all 8 bus ports. Upon detecting signature mismatches, polling anomalies, or DoS spikes, hardware interrupts <strong>physically cut VDD power to the target port in under 100ms</strong>, containing blast radius contamination.
+          </p>
+          <div class="tech-spec-box">
+            Isolation Latency: &lt; 100ms (Avg 42ms) | Circuit Cut-off: Load Switch IC Power-Gating | Blast Radius: Single Port
+          </div>
+        </div>
+
+        <!-- 4. Crypto -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: #ff80ab; margin-bottom: 0.5rem;">Layer 4: Lightweight Crypto & NDAA Supply Chain Security</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            Hardware-accelerated <strong>AES-128-GCM / ChaCha20-Poly1305</strong> streaming encryption. Trusted Western silicon (Nordic, Renesas, ST, Microchip, TI) eliminates hardware Trojan backdoors, complying fully with US NDAA and EU Cyber Resilience Act regulations.
+          </p>
+          <div class="tech-spec-box">
+            Algorithms: AES-128-GCM / ChaCha20-Poly1305 | Hardware Accelerator: Dedicated Crypto Core | Compliance: NDAA / EU CRA
+          </div>
+        </div>
+
+        <!-- 5. Gemini AI -->
+        <div>
+          <h3 style="font-size: 1.6rem; color: #ce93d8; margin-bottom: 0.5rem;">Layer 5: Cloud Gemini AI Threat Intelligence & Auto-Patching</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            Cloud Gemini AI continuously analyzes edge node telemetry vectors. Upon identifying zero-day anomalies, it alerts the Standardization Promotion Forum and generates lightweight Verilog RTL patch circuits for deployment.
+          </p>
+          <div class="tech-spec-box">
+            AI Engine: Gemini Pro Security Model | Telemetry: Anomaly Vector Detection | Patch Generation: Automated Verilog RTL Patching
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchAudience(type) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.audience-section').forEach(sec => sec.classList.remove('active'));
+
+      if (type === 'general') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('general-section').classList.add('active');
+      } else {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('expert-section').classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

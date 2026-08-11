@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal IoT Bus (UIB) | セキュリティ ＆ 防衛アーキテクチャ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .tab-container {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .tab-btn {
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      background: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 20px rgba(26, 115, 232, 0.3);
+    }
+    .audience-section {
+      display: none;
+    }
+    .audience-section.active {
+      display: block;
+    }
+    .sec-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .sec-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border-left: 4px solid var(--accent-yellow);
+    }
+    .tech-spec-box {
+      background: rgba(10, 25, 47, 0.6);
+      border: 1px solid rgba(26, 115, 232, 0.3);
+      border-radius: 16px;
+      padding: 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      color: #82b1ff;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; ポータルへ戻る</a>
+      <a href="../en/security.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">🌐 English Version &rarr;</a>
+    </div>
+
+    <!-- ヘッダー -->
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3rem;">
+      <span class="category-badge cat-sec" style="margin-bottom: 0.8rem; display: inline-block;">Zero-Trust 5層防衛</span>
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">セキュリティ ＆ 防衛アーキテクチャ</h1>
+      <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
+        ミッションクリティカル現場を守る、物理とAIの二重要塞
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1rem;">
+        Universal IoT Bus (UIB) は、無人環境やインフラ現場で想定される物理的破壊・ネットワーク侵入・ハッキング攻撃に対し、物理レイヤーからAIレイヤーまで5層の強固なZero-Trustセキュリティを提供します。
+      </p>
+    </div>
+
+    <!-- 観点切り替えタブボタン -->
+    <div class="tab-container">
+      <button class="tab-btn active" onclick="switchAudience('general')">💡 一般向け解説（身近な例えと安心設計）</button>
+      <button class="tab-btn" onclick="switchAudience('expert')">🔬 専門家・技術者向け（暗号・回路・LL文法仕様）</button>
+    </div>
+
+    <!-- ==================== 【一般向け解説】 ==================== -->
+    <div id="general-section" class="audience-section active">
+      <div class="glass-panel doc-section">
+        <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 1.5rem;">分かりやすい！UIBが「絶対安全」な4つの理由</h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          従来のIoT機器がハッキングされていた理由と、UIBがどのように身近な安心を守るのか、日常の例えで解説します。
+        </p>
+
+        <div class="sec-card-grid">
+          <!-- 1. パスポート -->
+          <div class="sec-card" style="border-left-color: #4caf50;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🪪</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">1. ニセモノを弾く「半導体パスポート」</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>【例え：偽造不可能な顔認証パスポート】</strong><br>
+              チップ製造時に刻まれた「指紋」のような固有暗号鍵を利用。悪意のある第三者がニセモノの機器を接続したり、不正なプログラムを流し込もうとしても、入口で100%シャットアウトします。
+            </p>
+          </div>
+
+          <!-- 2. ブレーカー -->
+          <div class="sec-card" style="border-left-color: #ff9800;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">2. 異常を瞬時に切る「スマートブレーカー」</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>【例え：家の電気ブレーカー】</strong><br>
+              万が一、外のセンサーが壊されたりウイルス攻撃を受けても、0.1秒（100ms）以内にその場所の電気を物理的に遮断。家全体（システム全体）に被害が広がるのを防ぎます。
+            </p>
+          </div>
+
+          <!-- 3. 定型封筒 -->
+          <div class="sec-card" style="border-left-color: #2196f3;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">✉️</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">3. あやしい手紙を開けない「定型封筒ルール」</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>【例え：決められたサイズの封筒しか受け取らないポスト】</strong><br>
+              変な長さのデータや不審な文字データを送ってパソコンをフリーズさせるサイバー攻撃（バッファ溢れ）を、決まった長さの封筒（16バイト固定長）ルールで完全に無効化します。
+            </p>
+          </div>
+
+          <!-- 4. AI警備員 -->
+          <div class="sec-card" style="border-left-color: #9c27b0;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">4. 24時間見守る「Gemini AI 警備員」</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              <strong>【例え：防犯カメラを見守るAI警備員】</strong><br>
+              クラウド上のGemini AIが世界中の通信状況を24時間監視。見たことのない新しい攻撃（ゼロデイ攻撃）の予兆を感知すると、自動的に防犯プログラムを作成して身を守ります。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 【専門家・技術者向け】 ==================== -->
+    <div id="expert-section" class="audience-section">
+      <div class="glass-panel doc-section">
+        <h2 class="gradient-text-alt" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Zero-Trust 5層セキュリティ仕様（技術仕様書）</h2>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          ハードウェアRoot of Trust、LL(1)文法パース回路、パワーゲーティング物理隔離、暗号化アルゴリズムの詳細仕様です。
+        </p>
+
+        <!-- 1. Hardware RoT -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: var(--primary-color); margin-bottom: 0.5rem;">Layer 1: Hardware Root of Trust (RoT) & PUF</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            シリコン半導体個体差を利用した <strong>PUF (Physically Unclonable Function)</strong> 鍵生成回路および <strong>ARM TrustZone / RISC-V PMP</strong> による物理メモリ保護。ブートローダー段階でECDSA-P256デジタル署名を検証し、非正規ファームウェアの起動をハードウェアレベルで完全にブロック。
+          </p>
+          <div class="tech-spec-box">
+            Features: PUF Silicon Unique Key Generation | Secure Boot (ECDSA-P256) | Memory Protection Unit (MPU/PMP)
+          </div>
+        </div>
+
+        <!-- 2. Zero-Parse -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: var(--secondary-color); margin-bottom: 0.5rem;">Layer 2: LL(1) Grammar Zero-Parse Protocol Defense</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            可変長JSON/XMLパースに起因するバッファオーバーフロー（RCE攻撃）を無効化するため、固定長16バイトTLVヘッダーによる <strong>LL(1) Top-Down Streaming Parsing</strong> を採用。`malloc`等の動的メモリ割当てを排除し、先頭から受信順に定数時間 O(1) で解釈を完了。
+          </p>
+          <div class="tech-spec-box">
+            Grammar Class: LL(1) Deterministic Top-Down | Time Complexity: O(1) Constant | Dynamic Alloc (malloc): 0 Bytes
+          </div>
+        </div>
+
+        <!-- 3. Power-Gating Isolation -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: var(--accent-yellow); margin-bottom: 0.5rem;">Layer 3: Autonomous Hardware Power-Gating Port Isolation (&lt;100ms)</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            バス上の各ポート（8ポート）に独立したロードスイッチICを配置。ハッシュ不一致、異常ポーリング、DoSスパイク、物理ショートを検知した場合、ハードウェア割込みにより<strong>100ms未満で対象ポートのVDD電源を物理切断（パワーゲーティング）</strong>。感染・障害の全体波及をブラスト・レディウス制御。
+          </p>
+          <div class="tech-spec-box">
+            Isolation Latency: &lt; 100ms (Avg 42ms) | Circuit Cut-off: Load Switch IC Power-Gating | Blast Radius: Single Port
+          </div>
+        </div>
+
+        <!-- 4. Crypto -->
+        <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
+          <h3 style="font-size: 1.6rem; color: #ff80ab; margin-bottom: 0.5rem;">Layer 4: Lightweight Crypto & NDAA Supply Chain Security</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            MCU暗号化アクセラレータによる <strong>AES-128-GCM / ChaCha20-Poly1305</strong> の超低遅延ストリーム暗号化。日米欧アライアンス（Nordic, Renesas, ST, Microchip, TI）の信頼半導体を採用し、海外製品に懸念されるハードウェア裏口回路（Silicon Trojan）を物理排除。米国NDAA法案および欧州Cyber Resilience Act完全適合。
+          </p>
+          <div class="tech-spec-box">
+            Algorithms: AES-128-GCM / ChaCha20-Poly1305 | Hardware Accelerator: Dedicated Crypto Core | Compliance: NDAA / EU CRA
+          </div>
+        </div>
+
+        <!-- 5. Gemini AI -->
+        <div>
+          <h3 style="font-size: 1.6rem; color: #ce93d8; margin-bottom: 0.5rem;">Layer 5: Cloud Gemini AI Threat Intelligence & Auto-Patching</h3>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            クラウド側Gemini AIがエッジノード群の通信メトリクスを常時解析。未知の侵入パターン（ゼロデイ攻撃）を自動検知した際、標準化推進フォーラムへ通知し、AIアセンブラ/コンパイラにより最小フットプリントの脆弱性修復パッチ回路記述（RTL Verilog）を全自動生成。
+          </p>
+          <div class="tech-spec-box">
+            AI Engine: Gemini Pro Security Model | Telemetry: Anomaly Vector Detection | Patch Generation: Automated Verilog RTL Patching
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchAudience(type) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.audience-section').forEach(sec => sec.classList.remove('active'));
+
+      if (type === 'general') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('general-section').classList.add('active');
+      } else {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('expert-section').classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
