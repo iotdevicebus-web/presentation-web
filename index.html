@@ -3,11 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universal IoT Bus (UIB) Enterprise Solution | Language Selection Portal</title>
+  <title>Universal IoT Bus (UIB) Enterprise Solution | Strategic Investor Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      // Automatic language redirection based on user browser settings
+      var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      var hasLanguagePreference = sessionStorage.getItem('uib_lang_selected');
+      
+      if (!hasLanguagePreference) {
+        if (userLang.startsWith('ja')) {
+          window.location.replace('./jp/index.html');
+        } else if (userLang.startsWith('en')) {
+          window.location.replace('./en/index.html');
+        }
+      }
+    })();
+  </script>
   <style>
     .lang-card-grid {
       display: grid;
@@ -33,10 +48,6 @@
       border-color: rgba(26, 115, 232, 0.5);
       box-shadow: 0 20px 50px rgba(26, 115, 232, 0.2);
     }
-    .flag-icon {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-    }
     .btn-enter {
       display: inline-block;
       margin-top: 2rem;
@@ -50,19 +61,18 @@
 <body>
   <div class="portal-container" style="max-width: 1000px; text-align: center; padding-top: 6rem;">
     <h1 class="portal-title gradient-text" style="font-size: 3.8rem; margin-bottom: 0.5rem;">Universal IoT Bus (UIB) Enterprise Solution</h1>
-    <h2 style="font-size: 1.8rem; color: var(--accent-yellow); font-weight: 600; margin-bottom: 2rem;">IoTシステム開発のすべてのフェイズに対応する、比類なき、総合ソリューション</h2>
+    <h2 style="font-size: 1.8rem; color: var(--accent-yellow); font-weight: 600; margin-bottom: 2rem;">エッジハードウェアからクラウドまでの一元開発を可能にする、オープンプロトコル基盤</h2>
     <p class="portal-subtitle" style="margin: 0 auto 4rem auto; font-size: 1.6rem;">
-      アーリーエンジェル ＆ Alphabet Foundation向け ピッチデッキ ＆ エグゼクティブポータル<br>
+      Enterprise & Strategic Investors Proposal Portal<br>
       <span style="font-size: 1.2rem; opacity: 0.8;">Please select your preferred language / 言語を選択してください</span>
     </p>
 
     <div class="lang-card-grid">
       <!-- 日本語 -->
-      <a href="jp/index.html" class="glass-panel lang-card lang-card-jp">
-        <div class="flag-icon">🇯🇵</div>
+      <a href="jp/index.html" onclick="sessionStorage.setItem('uib_lang_selected', 'jp')" class="glass-panel lang-card lang-card-jp">
         <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">日本語版 (Japanese)</h2>
         <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6;">
-          Alphabet社向けピッチスライド、エンジェル投資特設ページ、エグゼクティブ・サマリー、Q&A想定問答集（日本語ポータル）
+          戦略的投資家・パートナー向け提案資料、ピッチデッキ、エグゼクティブ・サマリー、セキュリティ仕様書（日本語ポータル）
         </p>
         <span class="btn-enter" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65; border: 1px solid rgba(234, 67, 53, 0.4);">
           日本語ポータルへ入る &rarr;
@@ -70,11 +80,10 @@
       </a>
 
       <!-- English -->
-      <a href="en/index.html" class="glass-panel lang-card lang-card-en">
-        <div class="flag-icon">🇺🇸 / 🌐</div>
+      <a href="en/index.html" onclick="sessionStorage.setItem('uib_lang_selected', 'en')" class="glass-panel lang-card lang-card-en">
         <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">English Version</h2>
         <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6;">
-          Full pitch deck, Pre-Seed Angel proposal, executive summary, and Q&A knowledge base tailored for Silicon Valley leadership.
+          Executive pitch deck, Pre-Seed Angel proposal, 5-layer security architecture, and technical Q&A tailored for strategic investors.
         </p>
         <span class="btn-enter" style="background: rgba(26, 115, 232, 0.2); color: #82b1ff; border: 1px solid rgba(26, 115, 232, 0.4);">
           Enter English Portal &rarr;
@@ -82,6 +91,6 @@
       </a>
     </div>
   </div>
-<!-- Build Refreshed: 2026-08-11 18:41:58 -->
 </body>
 </html>
+<!-- Build Refreshed: 2026-08-12 11:18:34 -->
