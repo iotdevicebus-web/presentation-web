@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal IoT Bus (UIB) | Global IoT Market Size & 2035 Forecast Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .market-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .market-metric-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      border-top: 4px solid var(--accent-yellow);
+    }
+    .chart-container-box {
+      background: rgba(10, 25, 47, 0.7);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .milestone-timeline {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .milestone-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid var(--primary-color);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+    }
+    .data-table th, .data-table td {
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--glass-border);
+      text-align: center;
+    }
+    .data-table th {
+      background: rgba(26, 115, 232, 0.2);
+      color: #fff;
+      font-weight: 700;
+    }
+    .actual-tag {
+      background: rgba(52, 168, 83, 0.2);
+      color: #81c784;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .forecast-tag {
+      background: rgba(251, 188, 4, 0.2);
+      color: #ffe082;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; Back to Portal</a>
+      <a href="../jp/market.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">日本語 &rarr;</a>
+    </div>
+
+    <!-- Header -->
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3rem;">
+      <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">Market Research & 2035 Forecast</span>
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Global IoT Market Growth & Structural Shift</h1>
+      <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
+        2020 to 2035 Projections (3-Year Milestone Analysis: Historical vs Forecasted Data)
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1rem;">
+        The global IoT, Edge AI, and Cloud ecosystem is expanding from <strong>$310 Billion USD in 2020 to a massive $2.85 Trillion USD market by 2035</strong>. This report outlines the structural transition from high-cost fragmented hardware custom work toward standardized server base infrastructure and AI-generated applications.
+      </p>
+    </div>
+
+    <!-- Metric Cards -->
+    <div class="market-summary-grid">
+      <div class="market-metric-card">
+        <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 0.5rem;">2020 Historical Value</h3>
+        <h4 style="font-size: 2.8rem; color: #fff; font-weight: 900; margin-bottom: 0.5rem;">$310 B</h4>
+        <p style="font-size: 1rem; color: var(--text-secondary);">Early PoC & Fragmentation Era</p>
+      </div>
+
+      <div class="market-metric-card" style="border-top-color: var(--secondary-color);">
+        <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 0.5rem;">2035 Forecast Value</h3>
+        <h4 style="font-size: 2.8rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">$2,850 B</h4>
+        <p style="font-size: 1rem; color: var(--text-secondary);">$2.85 Trillion (15.8% CAGR)</p>
+      </div>
+
+      <div class="market-metric-card" style="border-top-color: var(--primary-color);">
+        <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Server Core SW Share</h3>
+        <h4 style="font-size: 2.8rem; color: var(--primary-color); font-weight: 900; margin-bottom: 0.5rem;">20% ➔ 55%</h4>
+        <p style="font-size: 1.2rem; color: var(--accent-yellow); font-weight: 700;">UIB Primary Value Capture Area</p>
+      </div>
+    </div>
+
+    <!-- Chart 1: Market Size Growth -->
+    <div class="chart-container-box">
+      <h2 class="gradient-text" style="font-size: 2rem; margin-bottom: 0.5rem;">1. Total Global IoT Market Growth (2020 - 2035)</h2>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        Units: Billion USD ($ B) | 2020–2023: Historical Actuals | 2026–2035: Projections
+      </p>
+      <div style="position: relative; height: 380px; width: 100%;">
+        <canvas id="marketSizeChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Chart 2: Stacked Share Shift -->
+    <div class="chart-container-box">
+      <h2 class="gradient-text-alt" style="font-size: 2rem; margin-bottom: 0.5rem;">2. Segment Share Shift Analysis (Unit: %)</h2>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        ① Edge Devices (HW/Embedded SW) vs ② Server Platform (SW/Base Infrastructure) vs ③ Custom Applications
+      </p>
+      <div style="position: relative; height: 380px; width: 100%;">
+        <canvas id="marketShareChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="glass-panel doc-section" style="margin-bottom: 3rem;">
+      <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Quantitative Data Summary (3-Year Milestones)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Type</th>
+            <th>① Edge Devices (HW/Embedded SW)</th>
+            <th>② Server Platform (SW/Base Sys)</th>
+            <th>③ Custom Applications</th>
+            <th>Total Market Size ($ Billion)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>2020</strong></td>
+            <td><span class="actual-tag">Actual</span></td>
+            <td><strong>45.0%</strong> ($139.5B)</td>
+            <td><strong>20.0%</strong> ($62.0B)</td>
+            <td><strong>35.0%</strong> ($108.5B)</td>
+            <td><strong>$310 B</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2023</strong></td>
+            <td><span class="actual-tag">Actual</span></td>
+            <td><strong>40.0%</strong> ($208.0B)</td>
+            <td><strong>25.0%</strong> ($130.0B)</td>
+            <td><strong>35.0%</strong> ($182.0B)</td>
+            <td><strong>$520 B</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2026</strong></td>
+            <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong>35.0%</strong> ($308.0B)</td>
+            <td><strong>32.0%</strong> ($281.6B)</td>
+            <td><strong>33.0%</strong> ($290.4B)</td>
+            <td><strong>$880 B</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2029</strong></td>
+            <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong>30.0%</strong> ($435.0B)</td>
+            <td><strong>40.0%</strong> ($580.0B)</td>
+            <td><strong>30.0%</strong> ($435.0B)</td>
+            <td><strong>$1,450 B ($1.45T)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2032</strong></td>
+            <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong>25.0%</strong> ($525.0B)</td>
+            <td><strong>48.0%</strong> ($1,008.0B)</td>
+            <td><strong>27.0%</strong> ($567.0B)</td>
+            <td><strong>$2,100 B ($2.10T)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2035</strong></td>
+            <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong>20.0%</strong> ($570.0B)</td>
+            <td><strong>55.0%</strong> ($1,567.5B)</td>
+            <td><strong>25.0%</strong> ($712.5B)</td>
+            <td><strong>$2,850 B ($2.85T)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Milestone Commentary -->
+    <div class="glass-panel doc-section" style="margin-bottom: 3rem;">
+      <h2 class="gradient-text" style="font-size: 2.4rem; margin-bottom: 1.5rem;">3-Year Milestone Commentary & Structural Shift</h2>
+
+      <div class="milestone-timeline">
+        <!-- 2020 -->
+        <div class="milestone-card" style="border-left-color: #81c784;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2020 (Actual)</h3>
+            <span class="actual-tag">$310 Billion</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>[Edge Hardware Heavy & Fragmented PoC Phase]</strong><br>
+            Hardware prototyping and custom board design dominated 45% of the market. High friction in embedded software development created massive inefficiency.
+          </p>
+        </div>
+
+        <!-- 2023 -->
+        <div class="milestone-card" style="border-left-color: #81c784;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2023 (Actual)</h3>
+            <span class="actual-tag">$520 Billion</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>[Industrial IoT & Surveillance Expansion]</strong><br>
+            Expansion of cellular LTE surveillance and industrial monitoring. However, custom driver development and fragmented custom apps (35%) remained major bottlenecks.
+          </p>
+        </div>
+
+        <!-- 2026 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2026 (Forecast)</h3>
+            <span class="forecast-tag">$880 Billion</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>[Edge AI & Fast Cold-Start Demand Acceleration]</strong><br>
+            Surging demand for battery longevity (5.0s instant cold start) and Edge AI integration. Standardized reference kits (like UIB) gain rapid momentum, expanding server software share to 32%.
+          </p>
+        </div>
+
+        <!-- 2029 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2029 (Forecast)</h3>
+            <span class="forecast-tag">$1,450 Billion ($1.45T)</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>[Server Platform Overtakes Edge Hardware Share]</strong><br>
+            Global IoT connections cross 40 Billion nodes. Standardized low-cost silicon (RISC-V/ASIC) drops hardware share to 30%, while server base software and Gemini AI platform orchestration jump to 40%.
+          </p>
+        </div>
+
+        <!-- 2032 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2032 (Forecast)</h3>
+            <span class="forecast-tag">$2,100 Billion ($2.10T)</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>[Smart City & Autonomous Edge Infrastructure]</strong><br>
+            Fully event-driven (10μA standby) and Zero-Trust 5-Layer Security become universal standards across robotics and municipal infrastructure, driving server platform share to 48%.
+          </p>
+        </div>
+
+        <!-- 2035 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2035 (Forecast)</h3>
+            <span class="forecast-tag">$2,850 Billion ($2.85T)</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>[Gemini Generative AI & Edge LSI Fusion]</strong><br>
+            Edge hardware commoditizes into ultra-low-cost silicon (20% share), while 55% ($1.56 Trillion) of total industry value concentrates in cloud/server platform software and AI orchestration.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Takeaways -->
+    <div class="glass-panel doc-section" style="border-left: 4px solid var(--accent-yellow); background: rgba(251, 188, 4, 0.04);">
+      <h2 style="font-size: 2.2rem; color: var(--accent-yellow); margin-bottom: 1rem;">Strategic Executive Takeaways</h2>
+      <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-primary);">
+        The market data reveals a massive structural shift: <strong>Value is migrating rapidly from custom hardware manufacturing (45% ➔ 20%) to standardized server base software & AI platforms (20% ➔ 55%).</strong><br><br>
+        Universal IoT Bus (UIB) Enterprise Solution commoditizes edge hardware globally via affordable reference kits and ASIC silicon, while <strong>capturing majority market share in the $1.56 Trillion server platform & AI orchestration software layer by 2035</strong>.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    // Chart 1: Market Size Growth
+    const ctxSize = document.getElementById('marketSizeChart').getContext('2d');
+    new Chart(ctxSize, {
+      type: 'bar',
+      data: {
+        labels: ['2020 (Actual)', '2023 (Actual)', '2026 (Forecast)', '2029 (Forecast)', '2032 (Forecast)', '2035 (Forecast)'],
+        datasets: [{
+          label: 'Total Global IoT Market ($ Billion USD)',
+          data: [310, 520, 880, 1450, 2100, 2850],
+          backgroundColor: [
+            'rgba(52, 168, 83, 0.6)',
+            'rgba(52, 168, 83, 0.6)',
+            'rgba(251, 188, 4, 0.6)',
+            'rgba(251, 188, 4, 0.6)',
+            'rgba(251, 188, 4, 0.6)',
+            'rgba(251, 188, 4, 0.6)'
+          ],
+          borderColor: [
+            '#81c784',
+            '#81c784',
+            '#ffe082',
+            '#ffe082',
+            '#ffe082',
+            '#ffe082'
+          ],
+          borderWidth: 2,
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#ffffff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    });
+
+    // Chart 2: Stacked Share Shift
+    const ctxShare = document.getElementById('marketShareChart').getContext('2d');
+    new Chart(ctxShare, {
+      type: 'bar',
+      data: {
+        labels: ['2020 (Actual)', '2023 (Actual)', '2026 (Forecast)', '2029 (Forecast)', '2032 (Forecast)', '2035 (Forecast)'],
+        datasets: [
+          {
+            label: '① Edge Devices (HW/Embedded SW) %',
+            data: [45, 40, 35, 30, 25, 20],
+            backgroundColor: 'rgba(234, 67, 53, 0.7)'
+          },
+          {
+            label: '② Server Platform (SW/Base Sys) %',
+            data: [20, 25, 32, 40, 48, 55],
+            backgroundColor: 'rgba(26, 115, 232, 0.8)'
+          },
+          {
+            label: '③ Custom Applications %',
+            data: [35, 35, 33, 30, 27, 25],
+            backgroundColor: 'rgba(251, 188, 4, 0.7)'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#ffffff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { stacked: true, ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { stacked: true, max: 100, ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- Build Refreshed: 2026-08-14 09:25:57 -->

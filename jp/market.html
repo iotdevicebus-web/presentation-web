@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal IoT Bus (UIB) | グローバルIoT市場規模 推移 ＆ 2035年予測分析</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .market-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .market-metric-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      border-top: 4px solid var(--accent-yellow);
+    }
+    .chart-container-box {
+      background: rgba(10, 25, 47, 0.7);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .milestone-timeline {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .milestone-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid var(--primary-color);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+    }
+    .data-table th, .data-table td {
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--glass-border);
+      text-align: center;
+    }
+    .data-table th {
+      background: rgba(26, 115, 232, 0.2);
+      color: #fff;
+      font-weight: 700;
+    }
+    .actual-tag {
+      background: rgba(52, 168, 83, 0.2);
+      color: #81c784;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .forecast-tag {
+      background: rgba(251, 188, 4, 0.2);
+      color: #ffe082;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; ポータルへ戻る</a>
+      <a href="../en/market.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">ENGLISH &rarr;</a>
+    </div>
+
+    <!-- ヘッダー -->
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3rem;">
+      <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">市場調査 ＆ 2035年予測分析</span>
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">グローバルIoT市場規模 推移 ＆ 構造予測</h1>
+      <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
+        2020年〜2035年（3年刻み推移・実績値 ＆ 予想値データ）
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1rem;">
+        世界のIoT・Edge AI・クラウド市場は、2020年の3,100億ドル（約45兆円）から、2035年には<strong>2兆8,500億ドル（約420兆円）規模の巨大市場</strong>へ成長します。高コストなエッジハードウェア開発から、標準化されたサーバー基本システム ＆ AI自動生成へシフトする構造的背景を定量的データに基づき解説します。
+      </p>
+    </div>
+
+    <!-- 主要指標カード -->
+    <div class="market-summary-grid">
+      <div class="market-metric-card">
+        <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 0.5rem;">2020年 市場実績</h3>
+        <h4 style="font-size: 2.8rem; color: #fff; font-weight: 900; margin-bottom: 0.5rem;">$3,100 B</h4>
+        <p style="font-size: 1rem; color: var(--text-secondary);">約45兆円（初期PoC乱立期）</p>
+      </div>
+
+      <div class="market-metric-card" style="border-top-color: var(--secondary-color);">
+        <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 0.5rem;">2035年 予測市場規模</h3>
+        <h4 style="font-size: 2.8rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">$2,850 B</h4>
+        <p style="font-size: 1rem; color: var(--text-secondary);">約420兆円（CAGR 15.8%成長）</p>
+      </div>
+
+      <div class="market-metric-card" style="border-top-color: var(--primary-color);">
+        <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 0.5rem;">サーバーSW基本システムシェア</h3>
+        <h4 style="font-size: 2.8rem; color: var(--primary-color); font-weight: 900; margin-bottom: 0.5rem;">20% ➔ 55%</h4>
+        <p style="font-size: 1.2rem; color: var(--accent-yellow); font-weight: 700;">UIBが主導する最大の成長領域</p>
+      </div>
+    </div>
+
+    <!-- グラフ1: 市場規模推移バー ＆ ラインチャート -->
+    <div class="chart-container-box">
+      <h2 class="gradient-text" style="font-size: 2rem; margin-bottom: 0.5rem;">1. グローバルIoT全体市場規模の推移（2020年〜2035年）</h2>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        単位：10億米ドル ($ Billion USD) / 2020〜2023年：実績値、2026〜2035年：予想値
+      </p>
+      <div style="position: relative; height: 380px; width: 100%;">
+        <canvas id="marketSizeChart"></canvas>
+      </div>
+    </div>
+
+    <!-- グラフ2: 構成比率推移 スタックドバーチャート -->
+    <div class="chart-container-box">
+      <h2 class="gradient-text-alt" style="font-size: 2rem; margin-bottom: 0.5rem;">2. 市場構成要素の比率推移（単位：%）</h2>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        ① エッジデバイス (HW/組込みSW) vs ② サーバー側 (SW/基本システム) vs ③ 個別顧客向けアプリケーション
+      </p>
+      <div style="position: relative; height: 380px; width: 100%;">
+        <canvas id="marketShareChart"></canvas>
+      </div>
+    </div>
+
+    <!-- 定量データテーブル -->
+    <div class="glass-panel doc-section" style="margin-bottom: 3rem;">
+      <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 1.5rem;">市場データ推移一覧表（3年刻み）</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>年（Year）</th>
+            <th>区分</th>
+            <th>① エッジデバイス (HW/組込みSW)</th>
+            <th>② サーバー側 (SW/基本システム)</th>
+            <th>③ 個別顧客向け アプリ</th>
+            <th>全体市場規模 ($ Billion)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>2020年</strong></td>
+            <td><span class="actual-tag">実績値</span></td>
+            <td><strong>45.0%</strong> ($139.5B)</td>
+            <td><strong>20.0%</strong> ($62.0B)</td>
+            <td><strong>35.0%</strong> ($108.5B)</td>
+            <td><strong>$310 B</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2023年</strong></td>
+            <td><span class="actual-tag">実績値</span></td>
+            <td><strong>40.0%</strong> ($208.0B)</td>
+            <td><strong>25.0%</strong> ($130.0B)</td>
+            <td><strong>35.0%</strong> ($182.0B)</td>
+            <td><strong>$520 B</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2026年</strong></td>
+            <td><span class="forecast-tag">予想値</span></td>
+            <td><strong>35.0%</strong> ($308.0B)</td>
+            <td><strong>32.0%</strong> ($281.6B)</td>
+            <td><strong>33.0%</strong> ($290.4B)</td>
+            <td><strong>$880 B</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2029年</strong></td>
+            <td><span class="forecast-tag">予想値</span></td>
+            <td><strong>30.0%</strong> ($435.0B)</td>
+            <td><strong>40.0%</strong> ($580.0B)</td>
+            <td><strong>30.0%</strong> ($435.0B)</td>
+            <td><strong>$1,450 B (1.45兆ドル)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2032年</strong></td>
+            <td><span class="forecast-tag">予想値</span></td>
+            <td><strong>25.0%</strong> ($525.0B)</td>
+            <td><strong>48.0%</strong> ($1,008.0B)</td>
+            <td><strong>27.0%</strong> ($567.0B)</td>
+            <td><strong>$2,100 B (2.10兆ドル)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2035年</strong></td>
+            <td><span class="forecast-tag">予想値</span></td>
+            <td><strong>20.0%</strong> ($570.0B)</td>
+            <td><strong>55.0%</strong> ($1,567.5B)</td>
+            <td><strong>25.0%</strong> ($712.5B)</td>
+            <td><strong>$2,850 B (2.85兆ドル)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3年刻みの市場推移解説 -->
+    <div class="glass-panel doc-section" style="margin-bottom: 3rem;">
+      <h2 class="gradient-text" style="font-size: 2.4rem; margin-bottom: 1.5rem;">市場推移に関する詳細解説（3年刻み分析）</h2>
+
+      <div class="milestone-timeline">
+        <!-- 2020 -->
+        <div class="milestone-card" style="border-left-color: #81c784;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2020年（実績値）</h3>
+            <span class="actual-tag">$310 Billion</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>【エッジHW偏重 ＆ PoC乱立期】</strong><br>
+            エッジデバイス（HW・専用組み込みSW）が市場の45%を占める時代。各社が試作基板（Raspberry Piや専用基板）を一からスクラッチ開発していたため、ハードウェア製造・開発コストが膨大に。サーバー側は単純なデータ蓄積（20%）に留まっていた。
+          </p>
+        </div>
+
+        <!-- 2023 -->
+        <div class="milestone-card" style="border-left-color: #81c784;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2023年（実績値）</h3>
+            <span class="actual-tag">$520 Billion</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>【産業IoT ＆ 防災監視の初期普及期】</strong><br>
+            4G/LTEモジュールの安価化により監視カメラ・土砂災害監視が普及。しかし、センサーごとのドライバ開発と個別顧客アプリアプリ（35%）の工数が重く、開発基板の再設計コストが課題化。
+          </p>
+        </div>
+
+        <!-- 2026 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2026年（予想値）</h3>
+            <span class="forecast-tag">$880 Billion</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>【Edge AI ＆ コールドスタート短縮需要の急増】</strong><br>
+            バッテリー長寿命化（コールドスタート5.0秒化）やEdge AI搭載が必須となり、エッジ基板の標準化（UIBのようなリファレンスキット）への関心が急速に高まる。サーバー基本システムシェアが32%へ伸長。
+          </p>
+        </div>
+
+        <!-- 2029 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2029年（予想値）</h3>
+            <span class="forecast-tag">$1,450 Billion (1.45兆ドル)</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>【サーバー基本システムがエッジHWシェアを逆転】</strong><br>
+            全世界の接続ノードが400億台を突破。安価な標準LSI（RISC-V/ASIC化）の普及により、エッジHWシェアは30%に低下する一方、全層自動同期・Gemini AI連携を担うサーバー基本システム（40%）が市場の主役に踊り出る。
+          </p>
+        </div>
+
+        <!-- 2032 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2032年（予想値）</h3>
+            <span class="forecast-tag">$2,100 Billion (2.10兆ドル)</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>【自治体・スマートシティ全層インフラ化】</strong><br>
+            完全事象駆動型（待機電流10μA）とZero-Trust 5層セキュリティが自治体防犯・防災・自動運転・ロボティクスの世界標準に。サーバー基本システムシェアは48%に達する。
+          </p>
+        </div>
+
+        <!-- 2035 -->
+        <div class="milestone-card" style="border-left-color: #ffe082;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.6rem; color: #fff;">2035年（予想値）</h3>
+            <span class="forecast-tag">$2,850 Billion (2.85兆ドル)</span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+            <strong>【Gemini/Generative AIとエッジLSIの一体融合期】</strong><br>
+            エッジ単体価格は数十円台（シェア20%）にコモディティ化し、収益の大部分（55%・1.56兆ドル）はクラウド/サーバー側のプラットフォームSWとAI統合機能へ移行。個別アプリはAI全自動生成によりシェア25%へ健全化。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 全体の総括 -->
+    <div class="glass-panel doc-section" style="border-left: 4px solid var(--accent-yellow); background: rgba(251, 188, 4, 0.04);">
+      <h2 style="font-size: 2.2rem; color: var(--accent-yellow); margin-bottom: 1rem;">全体の総括（Universal IoT Busの構造的優位性）</h2>
+      <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-primary);">
+        市場推移データが示す最大の示唆は、<strong>「高コストなエッジハードウェア製造（45%➔20%）から、標準化されたサーバー基本システム ＆ プラットフォームSW（20%➔55%）への劇的な価値移動」</strong>です。<br><br>
+        Universal IoT Bus (UIB) Enterprise Solution は、安価な標準リファレンスキット（Aボード/Bボード）およびASIC化によりエッジハードウェアを世界規模で普及・コモディティ化させつつ、**2035年に1.56兆ドル（約230兆円）に達する「サーバー側SW基本システム ＆ AI統合プラットフォーム」市場の世界的シェアを独占する戦略構造**を備えています。
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    // Chart 1: Market Size Growth (Bar + Line)
+    const ctxSize = document.getElementById('marketSizeChart').getContext('2d');
+    new Chart(ctxSize, {
+      type: 'bar',
+      data: {
+        labels: ['2020年 (実績)', '2023年 (実績)', '2026年 (予想)', '2029年 (予想)', '2032年 (予想)', '2035年 (予想)'],
+        datasets: [{
+          label: '全体市場規模 (Billion USD $)',
+          data: [310, 520, 880, 1450, 2100, 2850],
+          backgroundColor: [
+            'rgba(52, 168, 83, 0.6)',
+            'rgba(52, 168, 83, 0.6)',
+            'rgba(251, 188, 4, 0.6)',
+            'rgba(251, 188, 4, 0.6)',
+            'rgba(251, 188, 4, 0.6)',
+            'rgba(251, 188, 4, 0.6)'
+          ],
+          borderColor: [
+            '#81c784',
+            '#81c784',
+            '#ffe082',
+            '#ffe082',
+            '#ffe082',
+            '#ffe082'
+          ],
+          borderWidth: 2,
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#ffffff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    });
+
+    // Chart 2: Stacked Percentage Breakdown Chart
+    const ctxShare = document.getElementById('marketShareChart').getContext('2d');
+    new Chart(ctxShare, {
+      type: 'bar',
+      data: {
+        labels: ['2020年 (実績)', '2023年 (実績)', '2026年 (予想)', '2029年 (予想)', '2032年 (予想)', '2035年 (予想)'],
+        datasets: [
+          {
+            label: '① エッジデバイス (HW/組込みSW) %',
+            data: [45, 40, 35, 30, 25, 20],
+            backgroundColor: 'rgba(234, 67, 53, 0.7)'
+          },
+          {
+            label: '② サーバー側 (SW/基本システム) %',
+            data: [20, 25, 32, 40, 48, 55],
+            backgroundColor: 'rgba(26, 115, 232, 0.8)'
+          },
+          {
+            label: '③ 個別顧客向け アプリ %',
+            data: [35, 35, 33, 30, 27, 25],
+            backgroundColor: 'rgba(251, 188, 4, 0.7)'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#ffffff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { stacked: true, ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { stacked: true, max: 100, ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- Build Refreshed: 2026-08-14 09:25:57 -->
