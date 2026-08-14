@@ -140,14 +140,26 @@
       </div>
     </div>
 
+    <!-- グラフ3: 全世界エッジ端末接続台数の推移（単位：億台） -->
+    <div class="chart-container-box">
+      <h2 class="gradient-text" style="font-size: 2rem; margin-bottom: 0.5rem;">3. 全世界エッジ端末接続数量の推移（2020年〜2035年）</h2>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        単位：億台 (Billion Devices) / 2020〜2023年：実績値、2026〜2035年：予想値（4.5倍へ拡大）
+      </p>
+      <div style="position: relative; height: 380px; width: 100%;">
+        <canvas id="deviceQuantityChart"></canvas>
+      </div>
+    </div>
+
     <!-- 定量データテーブル -->
     <div class="glass-panel doc-section" style="margin-bottom: 3rem;">
       <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 1.5rem;">市場データ推移一覧表（3年刻み）</h2>
-      <table class="data-table">
+            <table class="data-table">
         <thead>
           <tr>
             <th>年（Year）</th>
             <th>区分</th>
+            <th>接続端末数量</th>
             <th>① エッジデバイス (HW/組込みSW)</th>
             <th>② サーバー側 (SW/基本システム)</th>
             <th>③ 個別顧客向け アプリ</th>
@@ -158,6 +170,7 @@
           <tr>
             <td><strong>2020年</strong></td>
             <td><span class="actual-tag">実績値</span></td>
+            <td><strong style="color: var(--accent-yellow);">122 億台</strong></td>
             <td><strong>45.0%</strong> ($139.5B)</td>
             <td><strong>20.0%</strong> ($62.0B)</td>
             <td><strong>35.0%</strong> ($108.5B)</td>
@@ -166,6 +179,7 @@
           <tr>
             <td><strong>2023年</strong></td>
             <td><span class="actual-tag">実績値</span></td>
+            <td><strong style="color: var(--accent-yellow);">167 億台</strong></td>
             <td><strong>40.0%</strong> ($208.0B)</td>
             <td><strong>25.0%</strong> ($130.0B)</td>
             <td><strong>35.0%</strong> ($182.0B)</td>
@@ -174,6 +188,7 @@
           <tr>
             <td><strong>2026年</strong></td>
             <td><span class="forecast-tag">予想値</span></td>
+            <td><strong style="color: var(--accent-yellow);">235 億台</strong></td>
             <td><strong>35.0%</strong> ($308.0B)</td>
             <td><strong>32.0%</strong> ($281.6B)</td>
             <td><strong>33.0%</strong> ($290.4B)</td>
@@ -182,6 +197,7 @@
           <tr>
             <td><strong>2029年</strong></td>
             <td><span class="forecast-tag">予想値</span></td>
+            <td><strong style="color: var(--accent-yellow);">328 億台</strong></td>
             <td><strong>30.0%</strong> ($435.0B)</td>
             <td><strong>40.0%</strong> ($580.0B)</td>
             <td><strong>30.0%</strong> ($435.0B)</td>
@@ -190,6 +206,7 @@
           <tr>
             <td><strong>2032年</strong></td>
             <td><span class="forecast-tag">予想値</span></td>
+            <td><strong style="color: var(--accent-yellow);">435 億台</strong></td>
             <td><strong>25.0%</strong> ($525.0B)</td>
             <td><strong>48.0%</strong> ($1,008.0B)</td>
             <td><strong>27.0%</strong> ($567.0B)</td>
@@ -198,6 +215,7 @@
           <tr>
             <td><strong>2035年</strong></td>
             <td><span class="forecast-tag">予想値</span></td>
+            <td><strong style="color: var(--accent-yellow);">550 億台</strong></td>
             <td><strong>20.0%</strong> ($570.0B)</td>
             <td><strong>55.0%</strong> ($1,567.5B)</td>
             <td><strong>25.0%</strong> ($712.5B)</td>
@@ -392,8 +410,38 @@
         }
       }
     });
+    // Chart 3: Connected Edge Device Quantity Growth (Billion Devices)
+    const ctxQty = document.getElementById('deviceQuantityChart').getContext('2d');
+    new Chart(ctxQty, {
+      type: 'line',
+      data: {
+        labels: ['2020年 (122億台)', '2023年 (167億台)', '2026年 (235億台)', '2029年 (328億台)', '2032年 (435億台)', '2035年 (550億台)'],
+        datasets: [{
+          label: 'エッジ端末接続数量 (億台 / Billion Devices)',
+          data: [122, 167, 235, 328, 435, 550],
+          borderColor: '#81c784',
+          backgroundColor: 'rgba(52, 168, 83, 0.2)',
+          fill: true,
+          tension: 0.3,
+          borderWidth: 3,
+          pointRadius: 6,
+          pointBackgroundColor: '#ffe082'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#ffffff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    });
   </script>
 </body>
 </html>
 
-<!-- Build Refreshed: 2026-08-14 09:27:46 -->
+<!-- Build Refreshed: 2026-08-14 09:31:46 -->

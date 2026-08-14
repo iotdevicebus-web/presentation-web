@@ -140,14 +140,26 @@
       </div>
     </div>
 
+    <!-- Chart 3: Connected Edge Device Quantity Growth (Billion Units) -->
+    <div class="chart-container-box">
+      <h2 class="gradient-text" style="font-size: 2rem; margin-bottom: 0.5rem;">3. Connected Edge Device Volume Projections (2020 - 2035)</h2>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        Units: Billion Devices | 2020–2023: Historical Actuals | 2026–2035: Projections (4.5x Growth to 55 Billion)
+      </p>
+      <div style="position: relative; height: 380px; width: 100%;">
+        <canvas id="deviceQuantityChart"></canvas>
+      </div>
+    </div>
+
     <!-- Data Table -->
     <div class="glass-panel doc-section" style="margin-bottom: 3rem;">
       <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Quantitative Data Summary (3-Year Milestones)</h2>
-      <table class="data-table">
+            <table class="data-table">
         <thead>
           <tr>
             <th>Year</th>
             <th>Type</th>
+            <th>Connected Nodes</th>
             <th>① Edge Devices (HW/Embedded SW)</th>
             <th>② Server Platform (SW/Base Sys)</th>
             <th>③ Custom Applications</th>
@@ -158,6 +170,7 @@
           <tr>
             <td><strong>2020</strong></td>
             <td><span class="actual-tag">Actual</span></td>
+            <td><strong style="color: var(--accent-yellow);">12.2 Billion</strong></td>
             <td><strong>45.0%</strong> ($139.5B)</td>
             <td><strong>20.0%</strong> ($62.0B)</td>
             <td><strong>35.0%</strong> ($108.5B)</td>
@@ -166,6 +179,7 @@
           <tr>
             <td><strong>2023</strong></td>
             <td><span class="actual-tag">Actual</span></td>
+            <td><strong style="color: var(--accent-yellow);">16.7 Billion</strong></td>
             <td><strong>40.0%</strong> ($208.0B)</td>
             <td><strong>25.0%</strong> ($130.0B)</td>
             <td><strong>35.0%</strong> ($182.0B)</td>
@@ -174,6 +188,7 @@
           <tr>
             <td><strong>2026</strong></td>
             <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong style="color: var(--accent-yellow);">23.5 Billion</strong></td>
             <td><strong>35.0%</strong> ($308.0B)</td>
             <td><strong>32.0%</strong> ($281.6B)</td>
             <td><strong>33.0%</strong> ($290.4B)</td>
@@ -182,6 +197,7 @@
           <tr>
             <td><strong>2029</strong></td>
             <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong style="color: var(--accent-yellow);">32.8 Billion</strong></td>
             <td><strong>30.0%</strong> ($435.0B)</td>
             <td><strong>40.0%</strong> ($580.0B)</td>
             <td><strong>30.0%</strong> ($435.0B)</td>
@@ -190,6 +206,7 @@
           <tr>
             <td><strong>2032</strong></td>
             <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong style="color: var(--accent-yellow);">43.5 Billion</strong></td>
             <td><strong>25.0%</strong> ($525.0B)</td>
             <td><strong>48.0%</strong> ($1,008.0B)</td>
             <td><strong>27.0%</strong> ($567.0B)</td>
@@ -198,6 +215,7 @@
           <tr>
             <td><strong>2035</strong></td>
             <td><span class="forecast-tag">Forecast</span></td>
+            <td><strong style="color: var(--accent-yellow);">55.0 Billion</strong></td>
             <td><strong>20.0%</strong> ($570.0B)</td>
             <td><strong>55.0%</strong> ($1,567.5B)</td>
             <td><strong>25.0%</strong> ($712.5B)</td>
@@ -392,8 +410,38 @@
         }
       }
     });
+    // Chart 3: Connected Edge Device Quantity Growth (Billion Devices)
+    const ctxQty = document.getElementById('deviceQuantityChart').getContext('2d');
+    new Chart(ctxQty, {
+      type: 'line',
+      data: {
+        labels: ['2020 (12.2B)', '2023 (16.7B)', '2026 (23.5B)', '2029 (32.8B)', '2032 (43.5B)', '2035 (55.0B)'],
+        datasets: [{
+          label: 'Connected Edge Nodes (Billion Devices)',
+          data: [12.2, 16.7, 23.5, 32.8, 43.5, 55.0],
+          borderColor: '#81c784',
+          backgroundColor: 'rgba(52, 168, 83, 0.2)',
+          fill: true,
+          tension: 0.3,
+          borderWidth: 3,
+          pointRadius: 6,
+          pointBackgroundColor: '#ffe082'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#ffffff', font: { size: 14 } } }
+        },
+        scales: {
+          x: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { ticks: { color: '#e0e0e0', font: { size: 13 } }, grid: { color: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    });
   </script>
 </body>
 </html>
 
-<!-- Build Refreshed: 2026-08-14 09:27:46 -->
+<!-- Build Refreshed: 2026-08-14 09:31:46 -->
