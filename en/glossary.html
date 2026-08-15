@@ -3,59 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universal IoT Bus (UIB) | Glossary of Terms & Intuitive Technical Dictionary</title>
+  <title>Universal IoT Bus (UIB) | Glossary of Terms (Alphabetical A to Z Table)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <style>
-    .glossary-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-    .glossary-card {
-      background: rgba(255, 255, 255, 0.03);
+    .glossary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      background: rgba(10, 25, 47, 0.7);
+      border-radius: 16px;
+      overflow: hidden;
       border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 2rem;
-      border-left: 4px solid var(--primary-color);
-      transition: all 0.3s ease;
     }
-    .glossary-card:hover {
-      border-left-color: var(--accent-yellow);
-      background: rgba(255, 255, 255, 0.06);
-      transform: translateY(-3px);
+    .glossary-table th, .glossary-table td {
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--glass-border);
+      text-align: left;
+      vertical-align: top;
     }
-    .term-title {
-      font-size: 1.6rem;
+    .glossary-table th {
+      background: rgba(26, 115, 232, 0.25);
       color: #fff;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
-    .term-cat {
-      font-size: 0.85rem;
-      padding: 0.2rem 0.7rem;
-      border-radius: 6px;
+    .term-anchor {
+      scroll-margin-top: 100px;
+    }
+    .term-name {
+      font-size: 1.3rem;
       font-weight: 700;
+      color: var(--accent-yellow);
+    }
+    .term-tech-badge {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
       background: rgba(26, 115, 232, 0.2);
       color: #82b1ff;
-    }
-    .term-easy {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      margin-top: 0.8rem;
-    }
-    .term-tech {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-top: 0.8rem;
-      padding-top: 0.8rem;
-      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      font-weight: 600;
     }
   </style>
 </head>
@@ -67,141 +59,251 @@
     </div>
 
     <!-- Header -->
-    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3rem;">
-      <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">Simplified Technical Dictionary</span>
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 2rem;">
+      <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">Alphabetical A to Z Dictionary</span>
       <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Universal IoT Bus Glossary of Terms</h1>
       <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
-        Intuitive, Concise Explanations Tailored for Investors & Non-Technical Readers
+        Alphabetically Sorted (A-Z) Reference Table & Definitions
       </h2>
       <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1rem;">
-        This glossary breaks down complex hardware, software, and cybersecurity concepts referenced throughout the UIB portal into clear, intuitive definitions with technical supplements.
+        Clear, concise definitions for all hardware, software, security, and commercial strategy terms used across the UIB portal documents. Clickable from document pages directly to specific anchors.
       </p>
     </div>
 
-    <!-- Glossary Grid -->
-    <div class="glossary-grid">
+    <!-- A-Z Table -->
+    <table class="glossary-table">
+      <thead>
+        <tr>
+          <th style="width: 30%;">Term (English)</th>
+          <th style="width: 70%;">Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
 
-      <!-- 1. Universal IoT Bus (UIB) -->
-      <div class="glossary-card" style="border-left-color: var(--accent-yellow);">
-        <div class="term-title">
-          <span>Universal IoT Bus (UIB)</span>
-          <span class="term-cat" style="background: rgba(251, 188, 4, 0.2); color: #ffe082;">Core Standard</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          An open, unified standard that allows diverse sensors, motors, and communication chips to be connected seamlessly like "LEGO bricks" for instant unified control.
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> Standardizes physical & protocol layers to ensure complete interoperability across heterogeneous edge devices.
-        </div>
-      </div>
+        <!-- A -->
+        <tr id="term-asic" class="term-anchor">
+          <td>
+            <div class="term-name">ASIC</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Application Specific Integrated Circuit</div>
+            <span class="term-tech-badge">Mass Production IC</span>
+          </td>
+          <td>
+            Custom mass-production silicon chip optimized exclusively for UIB bus control, reducing unit hardware costs down to sub-dollar levels.
+          </td>
+        </tr>
 
-      <!-- 2. LL Grammar Zero-Parse -->
-      <div class="glossary-card" style="border-left-color: #34a853;">
-        <div class="term-title">
-          <span>LL Grammar Zero-Parse</span>
-          <span class="term-cat" style="background: rgba(52, 168, 83, 0.2); color: #81c784;">Protocol</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          A data structure that can be understood instantly just by reading bytes from left to right. Eliminates heavy parsing calculations while structurally preventing buffer overflow hacks.
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> Fixed 16-Byte header based on LL(1) parsing. Enables O(1) state transitions and structurally eliminates Remote Code Execution (RCE).
-        </div>
-      </div>
+        <!-- C -->
+        <tr id="term-circuit-breaker" class="term-anchor">
+          <td>
+            <div class="term-name">Circuit Breaker</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Physical Power Gating</div>
+            <span class="term-tech-badge">Physical Defense</span>
+          </td>
+          <td>
+            Emergency FET power gating circuit that physically cuts off power and bus lines in under 100 milliseconds upon detecting intrusions or voltage anomalies.
+          </td>
+        </tr>
 
-      <!-- 3. Hardware RoT -->
-      <div class="glossary-card" style="border-left-color: #ea4335;">
-        <div class="term-title">
-          <span>Hardware Root of Trust (RoT)</span>
-          <span class="term-cat" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65;">Security</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          An unalterable silicon ID card embedded directly during chip manufacturing. Physically rejects counterfeit boards and tampered firmware from launching.
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> Silicon-level cryptographic keys combined with Secure Boot sequence to guarantee software integrity at startup.
-        </div>
-      </div>
+        <tr id="term-cold-start" class="term-anchor">
+          <td>
+            <div class="term-name">Cold Start 5.0s</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Fast Boot Sequence</div>
+            <span class="term-tech-badge">Fast Boot</span>
+          </td>
+          <td>
+            System architecture enabling an unpowered node to cold boot, execute sensing, and transmit emergency telemetry in under 5.0 seconds.
+          </td>
+        </tr>
 
-      <!-- 4. PUF (Physical Unclonable Function) -->
-      <div class="glossary-card" style="border-left-color: #ea4335;">
-        <div class="term-title">
-          <span>PUF (Physical Unclonable Function)</span>
-          <span class="term-cat" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65;">Security</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          A cryptographic key generated from microscopic, accidental physical variations in silicon—acting like a chip's unique "fingerprint" that can never be copied or cloned.
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> Derives unique challenge-response pairs from semiconductor process variations, eliminating key storage memory leak risks.
-        </div>
-      </div>
+        <!-- D -->
+        <tr id="term-dual-track" class="term-anchor">
+          <td>
+            <div class="term-name">Dual-Track Strategy</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Commercial & Public Model</div>
+            <span class="term-tech-badge">Business Model</span>
+          </td>
+          <td>
+            Commercial framework balancing public-interest social infrastructure deployments with aggressive B2B enterprise monetization & ASIC licensing.
+          </td>
+        </tr>
 
-      <!-- 5. 5.0s Cold Start -->
-      <div class="glossary-card" style="border-left-color: var(--accent-yellow);">
-        <div class="term-title">
-          <span>5.0s Instant Cold Start</span>
-          <span class="term-cat" style="background: rgba(251, 188, 4, 0.2); color: #ffe082;">Power Management</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          The ability for a zero-power sleeping system to wake up, boot completely, and transmit critical emergency data within 5.0 seconds of detecting an event.
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> Event-driven power-on sequence ensuring reliable data capture in off-grid disaster monitoring applications.
-        </div>
-      </div>
+        <!-- E -->
+        <tr id="term-edge-device" class="term-anchor">
+          <td>
+            <div class="term-name">Edge Device</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Edge Hardware Node</div>
+            <span class="term-tech-badge">Hardware Node</span>
+          </td>
+          <td>
+            Terminal hardware devices deployed at the field edge (sensors, cameras, actuators) capturing physical real-world events.
+          </td>
+        </tr>
 
-      <!-- 6. Power Gating <100ms Isolation -->
-      <div class="glossary-card" style="border-left-color: #ea4335;">
-        <div class="term-title">
-          <span><100ms Physical Isolation</span>
-          <span class="term-cat" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65;">Physical Defense</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          An emergency circuit breaker that physically shuts off power to a port in under 100 milliseconds (0.1s) when an intrusion or voltage anomaly is detected.
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> FET-switched power gating mechanism disconnecting physical bus lines to isolate malicious nodes instantly.
-        </div>
-      </div>
+        <!-- F -->
+        <tr id="term-fpga" class="term-anchor">
+          <td>
+            <div class="term-name">FPGA</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Field Programmable Gate Array</div>
+            <span class="term-tech-badge">Prototyping Silicon</span>
+          </td>
+          <td>
+            Reconfigurable semiconductor chip allowing hardware logic circuits to be programmed and updated post-manufacturing for prototype validation.
+          </td>
+        </tr>
 
-      <!-- 7. 10μA Standby Current -->
-      <div class="glossary-card" style="border-left-color: #34a853;">
-        <div class="term-title">
-          <span>10μA Micro-Standby Current</span>
-          <span class="term-cat" style="background: rgba(52, 168, 83, 0.2); color: #81c784;">Ultra-Low Power</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          Ultra-low energy consumption design that allows nodes to run continuously for years or decades on a single coin battery or small solar panel.
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> Circuit optimization minimizing sleep leakage current for maintenance-free remote deployments.
-        </div>
-      </div>
+        <!-- G -->
+        <tr id="term-gemini-ai" class="term-anchor">
+          <td>
+            <div class="term-name">Gemini AI</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Google Multimodal AI</div>
+            <span class="term-tech-badge">AI Integration</span>
+          </td>
+          <td>
+            Google's advanced AI engine integrated with UIB to perform 24/7 edge anomaly monitoring, code generation, and automated Verilog security patching.
+          </td>
+        </tr>
 
-      <!-- 8. Dual-Track Strategy -->
-      <div class="glossary-card" style="border-left-color: var(--primary-color);">
-        <div class="term-title">
-          <span>Dual-Track Strategy</span>
-          <span class="term-cat" style="background: rgba(26, 115, 232, 0.2); color: #82b1ff;">Commercial Model</span>
-        </div>
-        <div class="term-easy">
-          <strong>[Intuitive Definition]</strong><br>
-          A growth model balancing "public interest mission" (disaster prevention & open standards) with "aggressive commercial B2B execution" (ASIC sales & enterprise licensing).
-        </div>
-        <div class="term-tech">
-          <strong>[Technical Note]</strong> Neutral Foundation governance coupled with commercial enterprise adoption to drive worldwide de facto standardization.
-        </div>
-      </div>
+        <!-- H -->
+        <tr id="term-hardware-rot" class="term-anchor">
+          <td>
+            <div class="term-name">Hardware RoT</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Root of Trust</div>
+            <span class="term-tech-badge">Security</span>
+          </td>
+          <td>
+            Silicon-level unalterable cryptographic identity embedded during chip fabrication, physically rejecting unauthorized boot code.
+          </td>
+        </tr>
 
-    </div>
+        <tr id="term-hifu-beamforming" class="term-anchor">
+          <td>
+            <div class="term-name">HIFU Beamforming</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">High-Intensity Focused Ultrasound</div>
+            <span class="term-tech-badge">Medical Tech</span>
+          </td>
+          <td>
+            Medical ultrasound navigation applying Aegis radar phase array principles to focus acoustic energy non-invasively onto target tissue.
+          </td>
+        </tr>
+
+        <tr id="term-host-system" class="term-anchor">
+          <td>
+            <div class="term-name">Host System</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Central Server & Cloud</div>
+            <span class="term-tech-badge">Base Infrastructure</span>
+          </td>
+          <td>
+            Central cloud or server platform orchestrating edge devices, aggregating telemetry, and dispatching global system commands.
+          </td>
+        </tr>
+
+        <!-- I -->
+        <tr id="term-irda" class="term-anchor">
+          <td>
+            <div class="term-name">IrDA</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Infrared Data Association</div>
+            <span class="term-tech-badge">Global Standard</span>
+          </td>
+          <td>
+            Worldwide standard for infrared wireless communications authored and commercialized globally under Gontaro Kitazumi's presidency.
+          </td>
+        </tr>
+
+        <!-- L -->
+        <tr id="term-ll-grammar" class="term-anchor">
+          <td>
+            <div class="term-name">LL Grammar Zero-Parse</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Zero-Parse Grammar</div>
+            <span class="term-tech-badge">Protocol Parsing</span>
+          </td>
+          <td>
+            Fixed 16-Byte header protocol based on LL(1) grammar allowing instant single-pass reading, eliminating parsing overhead and buffer overflows.
+          </td>
+        </tr>
+
+        <!-- P -->
+        <tr id="term-pre-seed" class="term-anchor">
+          <td>
+            <div class="term-name">Pre-Seed / Seed Funding</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Early Stage Investment</div>
+            <span class="term-tech-badge">Capital Round</span>
+          </td>
+          <td>
+            Initial capital round used to build physical hardware prototypes and capture real-world validation data prior to enterprise scaling.
+          </td>
+        </tr>
+
+        <tr id="term-puf" class="term-anchor">
+          <td>
+            <div class="term-name">PUF</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Physical Unclonable Function</div>
+            <span class="term-tech-badge">Silicon Fingerprint</span>
+          </td>
+          <td>
+            Cryptographic key derived from random manufacturing variations in silicon, creating an unclonable chip fingerprint with zero key storage risks.
+          </td>
+        </tr>
+
+        <!-- R -->
+        <tr id="term-risc-v" class="term-anchor">
+          <td>
+            <div class="term-name">RISC-V</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Open Architecture CPU</div>
+            <span class="term-tech-badge">Open CPU</span>
+          </td>
+          <td>
+            Royalty-free open-source instruction set architecture (ISA) empowering custom microprocessor design without vendor lock-in.
+          </td>
+        </tr>
+
+        <!-- S -->
+        <tr id="term-silicon-design" class="term-anchor">
+          <td>
+            <div class="term-name">Silicon Design</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Semiconductor Layout</div>
+            <span class="term-tech-badge">Chip Engineering</span>
+          </td>
+          <td>
+            The process of designing logic gates and custom IC layouts on silicon wafers to fabricate proprietary microchips or SoCs.
+          </td>
+        </tr>
+
+        <tr id="term-soc" class="term-anchor">
+          <td>
+            <div class="term-name">SoC</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">System on Chip</div>
+            <span class="term-tech-badge">Integrated System IC</span>
+          </td>
+          <td>
+            Single integrated circuit combining CPU, memory, I/O ports, and bus controllers onto a single silicon substrate.
+          </td>
+        </tr>
+
+        <!-- U -->
+        <tr id="term-ultra-low-power" class="term-anchor">
+          <td>
+            <div class="term-name">ultra-low power</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">10μA Micro Standby</div>
+            <span class="term-tech-badge">Ultra-Low Power</span>
+          </td>
+          <td>
+            Circuit design maintaining micro-ampere standby currents (10μA), enabling multi-year autonomous operation on coin batteries or solar power.
+          </td>
+        </tr>
+
+        <tr id="term-uib" class="term-anchor">
+          <td>
+            <div class="term-name">Universal IoT Bus (UIB)</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary);">Open Edge Infrastructure</div>
+            <span class="term-tech-badge">Core Architecture</span>
+          </td>
+          <td>
+            Open modular IoT protocol infrastructure unifying edge hardware, security, and cloud orchestration into a modular LEGO-like architecture.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
 
     <!-- Footer -->
     <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-secondary); font-size: 0.95rem;">
@@ -211,5 +313,4 @@
   </div>
 </body>
 </html>
-
-<!-- Build Refreshed: 2026-08-15 11:19:13 -->
+<!-- Build Refreshed: 2026-08-15 11:32:27 -->
