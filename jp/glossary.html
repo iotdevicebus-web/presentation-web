@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal IoT Bus (UIB) | 用語の定義 ＆ 技術辞書（初心者・投資家向け解説）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .glossary-search-box {
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .glossary-search-input {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-size: 1.2rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .glossary-search-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 20px rgba(26, 115, 232, 0.3);
+    }
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .glossary-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+    }
+    .glossary-card:hover {
+      border-left-color: var(--accent-yellow);
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-3px);
+    }
+    .term-title {
+      font-size: 1.6rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .term-cat {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 6px;
+      font-weight: 700;
+      background: rgba(26, 115, 232, 0.2);
+      color: #82b1ff;
+    }
+    .term-easy {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      margin-top: 0.8rem;
+    }
+    .term-tech {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; ポータルへ戻る</a>
+      <a href="../en/glossary.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">ENGLISH &rarr;</a>
+    </div>
+
+    <!-- ヘッダー -->
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3rem;">
+      <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">技術 ＆ 専門用語のわかりやすい解説</span>
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Universal IoT Bus 用語の定義一覧</h1>
+      <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
+        専門用語・独自概念を初心者や投資家向けにやさしく解説した技術辞書
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1rem;">
+        当ポータルサイト・プレゼンテーション資料に登場する高度なハードウェア・ソフトウェア・セキュリティの専門用語を、身近な例えや簡潔な言葉で分かりやすく定義・整理しました。
+      </p>
+    </div>
+
+    <!-- 用語カード一覧 -->
+    <div class="glossary-grid">
+
+      <!-- 1. Universal IoT Bus (UIB) -->
+      <div class="glossary-card" style="border-left-color: var(--accent-yellow);">
+        <div class="term-title">
+          <span>Universal IoT Bus (UIB)</span>
+          <span class="term-cat" style="background: rgba(251, 188, 4, 0.2); color: #ffe082;">コア基盤</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          様々なセンサーやモーター、通信機器を「レゴブロック」のように直感的に繋ぎ合わせて一元制御できる、オープンな共通接続規格。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> 物理層・プロトコル層を標準モジュール化し、異種デバイス間の相互運用性を担保するオープン・エッジインフラ基盤。
+        </div>
+      </div>
+
+      <!-- 2. LL文法 Zero-Parse -->
+      <div class="glossary-card" style="border-left-color: #34a853;">
+        <div class="term-title">
+          <span>LL文法 Zero-Parse</span>
+          <span class="term-cat" style="background: rgba(52, 168, 83, 0.2); color: #81c784;">通信・解析</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          届いたデータを左から順番に読むだけで意味が即座にわかる仕組み。データの解釈に必要な複雑な計算処理（パース）を不要にし、超高速処理とバッファ溢れ（ハッキング）の構造的排除を実現します。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> LL(1)構文解析原理に基づく固定16Bヘッダーフォーマット。O(1)時間での状態遷移を実現しバッファオーバーフロー（RCE）を排除。
+        </div>
+      </div>
+
+      <!-- 3. Hardware RoT -->
+      <div class="glossary-card" style="border-left-color: #ea4335;">
+        <div class="term-title">
+          <span>Hardware RoT (Root of Trust)</span>
+          <span class="term-cat" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65;">セキュリティ</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          チップの製造時に埋め込まれる「改ざんできないシリコンの身分証明書」。偽物の基板や、悪意ある不正プログラムが起動するのを物理的に拒否します。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> シリコン個体固有の鍵構造とSecure Bootシーケンスにより、改ざんファームウェアの実行をハードウェアレベルで阻止する信頼の起点。
+        </div>
+      </div>
+
+      <!-- 4. PUF (Physical Unclonable Function) -->
+      <div class="glossary-card" style="border-left-color: #ea4335;">
+        <div class="term-title">
+          <span>PUF (物理複製不可機能)</span>
+          <span class="term-cat" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65;">セキュリティ</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          人間の「指紋」のように、半導体の製造時に自然に生じる微細な物理的個体差を利用して作る暗号鍵。世界に1つだけで、絶対に真似も複製もできません。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> 半導体プロセスにおける微小偏差（SRAM初期化状態等）から固有レスポンスを生成する個体識別技術。鍵保持メモリ不要で漏洩リスクゼロ。
+        </div>
+      </div>
+
+      <!-- 5. コールドスタート 5.0秒 -->
+      <div class="glossary-card" style="border-left-color: var(--accent-yellow);">
+        <div class="term-title">
+          <span>コールドスタート 5.0秒</span>
+          <span class="term-cat" style="background: rgba(251, 188, 4, 0.2); color: #ffe082;">省電力・起動</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          電源が完全に切れていた待機状態から、土砂崩れやセンサー異常を検知した瞬間に、わずか5秒以内で全システムが起動し、通信と制御を完了する仕組み。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> 事象駆動型パワーONシーケンスにより、無電化地域でも長期待機からの即時復帰・データ通信を保証する高速ブート技術。
+        </div>
+      </div>
+
+      <!-- 6. パワーゲーティング / <100ms 物理電源遮断 -->
+      <div class="glossary-card" style="border-left-color: #ea4335;">
+        <div class="term-title">
+          <span><100ms 物理電源遮断</span>
+          <span class="term-cat" style="background: rgba(234, 67, 53, 0.2); color: #ff8a65;">物理防衛</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          外部からのサイバー攻撃や過電流を検知した際、100ミリ秒（0.1秒）未満で対象通信ポートの電源スイッチを物理的にOFFにして切り離すブレーカー。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> 異常トラフィックや電圧異常検知時に、FETスイッチを遮断して物理レイヤーで通信と電源供給を即座にシャットダウンする保護回路。
+        </div>
+      </div>
+
+      <!-- 7. 極小待機電流 10μA -->
+      <div class="glossary-card" style="border-left-color: #34a853;">
+        <div class="term-title">
+          <span>待機電流 10μA (マイクロアンペア)</span>
+          <span class="term-cat" style="background: rgba(52, 168, 83, 0.2); color: #81c784;">超省電力</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          待機中の電気消費量を極限まで抑えた設計。ボタン電池や小さなソーラーパネルだけで、数年〜10年以上も連続動作させることができます。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> スリープ時の漏れ電流を微小化した回路設計。バッテリー交換不能な山間部・災害監視センサー等の長寿命化を実現。
+        </div>
+      </div>
+
+      <!-- 8. デュアルトラック戦略 -->
+      <div class="glossary-card" style="border-left-color: var(--primary-color);">
+        <div class="term-title">
+          <span>デュアルトラック戦略</span>
+          <span class="term-cat" style="background: rgba(26, 115, 232, 0.2); color: #82b1ff;">事業戦略</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          防災や医療などの「社会貢献・公共インフラ推進」と、製品販売やライセンスによる「民間B2Bビジネス推進」の2つの軸を同時に走らせる成長戦略。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> 中立財団による標準化推進と、商業展開（ASICチップ・企業システム実装）を並行させるグローバルデファクト標準化モデル。
+        </div>
+      </div>
+
+      <!-- 9. イージス原理ビームフォーミング -->
+      <div class="glossary-card" style="border-left-color: #9c27b0;">
+        <div class="term-title">
+          <span>イージス原理ビームフォーミング</span>
+          <span class="term-cat" style="background: rgba(156, 39, 176, 0.2); color: #ce93d8;">先端技術</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          イージス艦のレーダーのように、複数の超音波の「波のタイミング（位相）」を制御して、切開せずに患部へピンポイントでエネルギーを集中させる技術。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> 多チャンネルアレイ素子の位相差制御により、狙った焦点（患部）のみに強力超音波(HIFU)エネルギーを干渉・集中させる制御技術。
+        </div>
+      </div>
+
+      <!-- 10. RISC-V (リスク・ファイブ) -->
+      <div class="glossary-card" style="border-left-color: var(--primary-color);">
+        <div class="term-title">
+          <span>RISC-V (リスク・ファイブ)</span>
+          <span class="term-cat" style="background: rgba(26, 115, 232, 0.2); color: #82b1ff;">半導体</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          世界中だれでも高額な特許料を払わずに自由に使える、オープンソースのCPU（コンピュータの頭脳）設計図。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> オープン標準の命令セットアーキテクチャ(ISA)。ベンダーロックインを排除し、専用拡張命令を自由に実装可能。
+        </div>
+      </div>
+
+      <!-- 11. ASIC (特定用途向けIC) -->
+      <div class="glossary-card" style="border-left-color: var(--accent-yellow);">
+        <div class="term-title">
+          <span>ASIC (特定用途向けIC)</span>
+          <span class="term-cat" style="background: rgba(251, 188, 4, 0.2); color: #ffe082;">半導体量産</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          特定目的（UIB専用通信制御など）のためだけに作られた専用量産チップ。大量生産により単価を数十円〜数百円台へ激減させることができます。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> Application Specific Integrated Circuit。成熟プロセス(130nm等)でのMPW試作を経て量産し、コストと消費電力を極小化。
+        </div>
+      </div>
+
+      <!-- 12. Gemini AI 連携自動パッチ -->
+      <div class="glossary-card" style="border-left-color: #34a853;">
+        <div class="term-title">
+          <span>Gemini AI 連携自動パッチ</span>
+          <span class="term-cat" style="background: rgba(52, 168, 83, 0.2); color: #81c784;">AI防衛</span>
+        </div>
+        <div class="term-easy">
+          <strong>【やさしい解説】</strong><br>
+          クラウド上のGemini AIが24時間体制で未知のサイバー攻撃を監視し、危険を検知するとエッジ基板用の修正プログラムを全自動で作成・適用する仕組み。
+        </div>
+        <div class="term-tech">
+          <strong>［技術的補足］</strong> アノマリログをAIが即時解析し、Verilogハードウェア記述コードの修正パッチを自動生成してFPGA/エッジノードへ適用するZero-Day防衛。
+        </div>
+      </div>
+
+    </div>
+
+    <!-- フッター -->
+    <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-secondary); font-size: 0.95rem;">
+      <p>&copy; 2026 Gontaro Kitazumi. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+
+<!-- Build Refreshed: 2026-08-15 11:19:13 -->
