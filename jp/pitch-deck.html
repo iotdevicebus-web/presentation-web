@@ -114,7 +114,7 @@
               <li><strong>Aボード (Host):</strong> LTE、WiFi通信の基本部分に特化したIoT通信専用ボード（ESP32-S3/SimCom/Ublox/Nordic対応）。</li>
               <li><strong>Bボード (Bus):</strong> 産業用と小型向けの2規格を用意し、標準化。</li>
               <li><strong>地政学・米国関税リスク回避:</strong> 米国・日本・欧州（日米欧）製デバイス（Nordic/ST/Renesas/Microchip等）を自由に選択・切り替え可能な設計とし、NDAA適合および関税ペナルティを完全無効化。</li>
-              <li><strong>ASICチップ化ロードマップ:</strong> Free IP(RISC-V)＋Gemini AI回路自動設計によりFPGAプロトタイピングを経て、最終的に単価数十円の専用ASIC LSIチップへ集約。</li>
+              <li><strong>ASICチップ化ロードマップ:</strong> Free IP(<a href="glossary.html#term-risc-v" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">RISC-V</a>)＋<a href="glossary.html#term-gemini-ai" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">Gemini AI</a>回路自動設計によりFPGAプロトタイピングを経て、最終的に単価数十円の専用ASIC LSIチップへ集約。</li>
             </ul>
 
             <div class="reveal-element delay-4" style="margin-top: 1.5rem;">
@@ -137,9 +137,9 @@
           </div>
 
           <div class="highlight-box reveal-element delay-3" style="border-left-color: var(--secondary-color); background: rgba(52, 168, 83, 0.05);">
-            <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--accent-yellow);">Zero-Trust 5層セキュリティ ＆ ポート別物理電源遮断 (＜100ms)</h3>
-            <p style="margin-bottom: 1rem;">1. <strong>Hardware RoT / PUF:</strong> 複製不能な物理固有鍵とSecure Bootによる改ざんファームウェア起動拒否。</p>
-            <p style="margin-bottom: 1rem;">2. <strong>LL文法 Zero-Parse防御:</strong> 固定長16Bヘッダーによりバッファ溢れ（RCE）攻撃を数学的に排除。</p>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--accent-yellow);">Zero-Trust 5層セキュリティ ＆ ポート別<a href="glossary.html#term-circuit-breaker" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">物理電源遮断</a> (＜100ms)</h3>
+            <p style="margin-bottom: 1rem;">1. <strong><a href="glossary.html#term-hardware-rot" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">Hardware RoT</a> / <a href="glossary.html#term-puf" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">PUF</a>:</strong> 複製不能な物理固有鍵とSecure Bootによる改ざんファームウェア起動拒否。</p>
+            <p style="margin-bottom: 1rem;">2. <strong><a href="glossary.html#term-ll-grammar" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">LL文法</a> Zero-Parse防御:</strong> 固定長16Bヘッダーによりバッファ溢れ（RCE）攻撃を数学的に排除。</p>
             <p style="margin-bottom: 1rem;">3. <strong>自律物理遮断:</strong> 異常検知時、対象ポートの電源を100ms未満で物理遮断しバス全体を防衛。</p>
             <p>4. <strong>AES-128暗号化 ＆ NDAA適合:</strong> 日米欧信頼半導体採用によるハードウェア裏口排除。</p>
             <p>通信エラー発生時、対象デバイスの電源を強制遮断。システム全体をダウンさせず、末端の異常のみを切り離して復旧させる <strong>ミッションクリティカルな堅牢性</strong>。</p>
@@ -154,7 +154,7 @@
             </div>
             <div class="glass-panel" style="text-align: center; padding: 1.5rem 1rem;">
               <h4 style="font-size: 2.6rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">5.0秒</h4>
-              <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 600;">コールドスタート</p>
+              <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 600;"><a href="glossary.html#term-cold-start" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">コールドスタート</a></p>
               <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.3rem;">LTEオンデマンド即時起動</p>
             </div>
             <div class="glass-panel" style="text-align: center; padding: 1.5rem 1rem;">
@@ -163,7 +163,7 @@
               <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.3rem;">19連射自己修復実証</p>
             </div>
             <div class="glass-panel" style="text-align: center; padding: 1.5rem 1rem;">
-              <h4 style="font-size: 2.6rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;">10μA</h4>
+              <h4 style="font-size: 2.6rem; color: var(--secondary-color); font-weight: 900; margin-bottom: 0.5rem;"><a href="glossary.html#term-ultra-low-power" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">10μA</a></h4>
               <p style="font-size: 1.2rem; color: var(--text-primary); font-weight: 600;">極限待機電流</p>
               <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 0.3rem;">完全イベント駆動</p>
             </div>
@@ -180,7 +180,7 @@
             
             <div class="reveal-element delay-2" style="margin-top: 2rem;">
               <p style="font-size: 1.6rem; margin-bottom: 1rem;">IoTシステム開発で課題となるのは、エッジハードウェアからクラウドサーバーまで全層の開発工数が膨大になることです。</p>
-              <p style="font-size: 1.6rem; margin-bottom: 1rem;">我々は、エッジデバイス側（ファームウェアC/C++・RTL回路記述Verilog）だけでなく、<strong>IoTクラウドサーバー側バックエンド（API・DB・データ受信・Google Cloud連携）までをAntigravity / Gemini AIに統一し、一元同時開発</strong>します。</p>
+              <p style="font-size: 1.6rem; margin-bottom: 1rem;">我々は、<a href="glossary.html#term-edge-device" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">エッジデバイス</a>側（ファームウェアC/C++・RTL回路記述Verilog）だけでなく、<strong>IoTクラウドサーバー側バックエンド（API・DB・データ受信・Google Cloud連携）までをAntigravity / <a href="glossary.html#term-gemini-ai" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">Gemini AI</a>に統一し、一元同時開発</strong>します。</p>
               <p style="font-size: 1.6rem;">全層をAIで一括生成・同期させることでデータ定義のミスマッチを完全排除し、開発工数・試作コストを1/10化。エンドツーエンドの全層IoTソリューションを一度に爆速解決します。</p>
             </div>
 
@@ -196,7 +196,7 @@
 
       <section class="scroll-slide bg-ten">
         <div class="slide-content">
-          <div class="chapter-badge badge-ten reveal-element">【転】デュアルトラック市場戦略 ＆ 世界標準化</div>
+          <div class="chapter-badge badge-ten reveal-element">【転】<a href="glossary.html#term-dual-track" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">デュアルトラック</a>市場戦略 ＆ 世界標準化</div>
           <h2 class="huge-text reveal-element delay-1">2.85兆ドル市場への<br>市場参入 ＆ 世界標準化</h2>
           
           <div class="reveal-element delay-2" style="max-width: 900px; margin-top: 2rem; border-left: 4px solid var(--accent-yellow); padding-left: 1.5rem;">
@@ -230,8 +230,8 @@
           </div>
 
           <ul class="bullet-list reveal-element delay-3" style="margin-top: 3rem;">
-            <li><strong>創業者・最高アーキテクト: <a href="founder.html" style="color: var(--accent-yellow); text-decoration: underline;">北角 権太郎 (Gontaro Kitazumi)</a></strong> — 元・米国赤外線データ協会 (IrDA USA) 会長。世界初100系新幹線車上ATC(4系統多数決回路)、NEC/Agilent製IrDA LSI回路IP、洞爺湖サミット要人警護無線、イージス原理HIFU胎児治療などを開発。画像電子技術賞2度受賞、医療・安全特許21件超。<a href="founder.html" style="color: var(--primary-color); font-weight: 700; margin-left: 0.5rem; text-decoration: none;">[全8大開発実績・特許一覧を見る &rarr;]</a></li>
-            <li><strong>AIアドバイザリーチーム (AI Advisory Team):</strong> 各社センサーDBと連動するGemini AIリアルタイム支援。ベンダー・開発者の疑問・技術課題に24時間即座に回答し、新部品データの自動学習と開発生産性の劇的向上を実現。</li>
+            <li><strong>創業者・最高アーキテクト: <a href="founder.html" style="color: var(--accent-yellow); text-decoration: underline;">北角 権太郎 (Gontaro Kitazumi)</a></strong> — 元・米国赤外線データ協会 (<a href="glossary.html#term-irda" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">IrDA</a> USA) 会長。世界初100系新幹線車上ATC(4系統多数決回路)、NEC/Agilent製IrDA LSI回路IP、洞爺湖サミット要人警護無線、イージス原理HIFU胎児治療などを開発。画像電子技術賞2度受賞、医療・安全特許21件超。<a href="founder.html" style="color: var(--primary-color); font-weight: 700; margin-left: 0.5rem; text-decoration: none;">[全8大開発実績・特許一覧を見る &rarr;]</a></li>
+            <li><strong>AIアドバイザリーチーム (AI Advisory Team):</strong> 各社センサーDBと連動する<a href="glossary.html#term-gemini-ai" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">Gemini AI</a>リアルタイム支援。ベンダー・開発者の疑問・技術課題に24時間即座に回答し、新部品データの自動学習と開発生産性の劇的向上を実現。</li>
             <li><strong>Mission-Critical DNA:</strong> 新幹線ATCシステム等の絶対安全設計知見と、超低遅延・高信頼性エッジインフラの圧倒的実務経験。</li>
             <li><strong>標準化推進フォーラム (Standardization Promotion Forum):</strong> オープンなフォーラム形式でベンダーの意見を集約し標準化方針を決定。年次でAlphabet社の評価チームに報告し評価を受けるガバナンス。</li>
           </ul>
@@ -280,7 +280,7 @@
       revealElements.forEach(el => observer.observe(el));
     });
   </script>
-<!-- Build Refreshed: 2026-08-15 11:32:27 -->
+<!-- Build Refreshed: 2026-08-15 11:39:16 -->
   <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-secondary); font-size: 0.95rem;">
     <p>&copy; 2026 Gontaro Kitazumi. All Rights Reserved.</p>
   </footer>

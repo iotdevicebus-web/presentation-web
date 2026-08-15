@@ -83,7 +83,7 @@
     <!-- 観点切り替えタブボタン -->
     <div class="tab-container">
       <button class="tab-btn active" onclick="switchAudience('general')"> 一般向け解説（身近な例えと安心設計）</button>
-      <button class="tab-btn" onclick="switchAudience('expert')">🔬 専門家・技術者向け（暗号・回路・LL文法仕様）</button>
+      <button class="tab-btn" onclick="switchAudience('expert')">🔬 専門家・技術者向け（暗号・回路・<a href="glossary.html#term-ll-grammar" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">LL文法</a>仕様）</button>
     </div>
 
     <!-- ==================== 【一般向け解説】 ==================== -->
@@ -148,12 +148,12 @@
 
         <!-- 1. <a href="glossary.html#term-hardware-rot" style="color: inherit; text-decoration: underline;">Hardware RoT</a> -->
         <div style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--glass-border);">
-          <h3 style="font-size: 1.6rem; color: var(--primary-color); margin-bottom: 0.5rem;">Layer 1: Hardware Root of Trust (RoT) & PUF</h3>
+          <h3 style="font-size: 1.6rem; color: var(--primary-color); margin-bottom: 0.5rem;">Layer 1: Hardware Root of Trust (RoT) & <a href="glossary.html#term-puf" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">PUF</a></h3>
           <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
-            シリコン半導体個体差を利用した <strong>PUF (Physically Unclonable Function)</strong> 鍵生成回路および <strong>ARM TrustZone / RISC-V PMP</strong> による物理メモリ保護。ブートローダー段階でECDSA-P256デジタル署名を検証し、非正規ファームウェアの起動をハードウェアレベルで完全にブロック。
+            シリコン半導体個体差を利用した <strong><a href="glossary.html#term-puf" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">PUF</a> (Physically Unclonable Function)</strong> 鍵生成回路および <strong>ARM TrustZone / <a href="glossary.html#term-risc-v" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">RISC-V</a> PMP</strong> による物理メモリ保護。ブートローダー段階でECDSA-P256デジタル署名を検証し、非正規ファームウェアの起動をハードウェアレベルで完全にブロック。
           </p>
           <div class="tech-spec-box">
-            Features: PUF Silicon Unique Key Generation | Secure Boot (ECDSA-P256) | Memory Protection Unit (MPU/PMP)
+            Features: <a href="glossary.html#term-puf" class="glossary-link" style="color: var(--accent-yellow); text-decoration: underline;">PUF</a> Silicon Unique Key Generation | Secure Boot (ECDSA-P256) | Memory Protection Unit (MPU/PMP)
           </div>
         </div>
 
@@ -226,4 +226,4 @@
 </body>
 </html>
 
-<!-- Build Refreshed: 2026-08-15 11:32:27 -->
+<!-- Build Refreshed: 2026-08-15 11:39:16 -->
