@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal IoT Bus (UIB) | 検証用試作プロトタイプ ＆ 動作実証レポート</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .proto-section {
+      margin-bottom: 3.5rem;
+    }
+    .proto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .proto-img-container {
+      background: rgba(10, 25, 47, 0.6);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .proto-img-container:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-yellow);
+    }
+    .proto-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+    .proto-desc {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid var(--primary-color);
+    }
+    .spec-tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: rgba(251, 188, 4, 0.15);
+      color: var(--accent-yellow);
+      margin-bottom: 0.8rem;
+    }
+    .badge-ai {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: rgba(52, 168, 83, 0.15);
+      color: #81c784;
+      margin-bottom: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; ポータルへ戻る</a>
+      <a href="../en/prototype.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">ENGLISH &rarr;</a>
+    </div>
+
+    <!-- ページヘッダー -->
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3.5rem;">
+      <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">実機動作検証 ＆ クラウドリアルタイム通信実証</span>
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">検証用試作プロトタイプ 実機動作レポート</h1>
+      <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
+        バラック部品によるUIB相互接続 ＆ AIバイブコーディングによる全自動システム開発
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1.2rem;">
+        Universal IoT Bus (UIB) システムの動作を確認するために、バラック部品を使用してハードウェアプロトタイプを組み上げ、包括的な動作試験を行いました。<br>
+        回路構成は、<strong>【Host側】Universal Reference Kit [ESP32-S3 + u-blox LTE]</strong> と、<strong>【Device側】STMicroelectronics社 NUCLEO-C071RB ボード</strong>を基本として作成されています。<br>
+        本ページでは、エッジ側で発生したイベント（センサー検知・カメラ撮影）をインターネット上の監視サーバーでリアルタイムに受信し、専用Viewer画面で確認した検証結果を報告します。
+      </p>
+      <div style="margin-top: 1.5rem; padding: 1.2rem; background: rgba(52, 168, 83, 0.08); border-radius: 12px; border: 1px solid rgba(52, 168, 83, 0.3);">
+        <span class="badge-ai">🤖 100% AIバイブコーディング開発</span>
+        <p style="font-size: 1.1rem; line-height: 1.6; color: #fff; margin-top: 0.3rem;">
+          これらの装置で使用されている動作プログラムは、<strong>エッジ端末側ファームウェアからインターネット監視サーバー側システムに至るまで、すべてAIを活用したバイブコーディング（Vibe Coding）</strong>によって一気通貫で作成・検証されています。
+        </p>
+      </div>
+    </div>
+
+    <!-- 1. ハードウェアプロトタイプ実機セクション -->
+    <div class="proto-section">
+      <h2 class="gradient-text" style="font-size: 2.3rem; margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem;">
+        1. ハードウェアプロトタイプ実機構成
+      </h2>
+
+      <!-- 写真1: Host基板 + Device基板 の全景 -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-img-container">
+          <img src="../images/ProtoHw1.png" alt="プロトタイプ Host基板 + Device基板 の全景" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: var(--accent-yellow);">
+          <span class="spec-tag">実機全景</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">プロトタイプ Host基板 ＋ Device基板 の全景</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            プロトタイプは、<strong>監視カメラ、バッテリー、IoT Host側、およびIoT Device側</strong>で構成されています。<br><br>
+            IoT Host側とIoT Device側は、標準規格である<strong>6本の信号線で構成される <a href="glossary.html#term-uib" style="color: var(--accent-yellow); text-decoration: underline;">UIB (Universal IoT Bus)</a></strong> によって相互接続されており、物理的なプラグ＆プレイでの確実なデータ・コマンド通信を実現しています。
+          </p>
+        </div>
+      </div>
+
+      <!-- 写真2: Host基板の動作スイッチ部 (Query/Camera) -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-desc" style="border-left-color: var(--primary-color);">
+          <span class="spec-tag" style="background: rgba(26, 115, 232, 0.15); color: #82b1ff;">Host側 UIスイッチ</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Host基板の動作スイッチ部（Query / Camera）</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            エッジデバイスのホスト側には、検証用の2つのUIスイッチが実装されています：
+          </p>
+          <ul class="bullet-list" style="font-size: 1.1rem !important; line-height: 1.8; margin-top: 0.8rem;">
+            <li><strong>Queryスイッチ:</strong> Device側の状態を即座に読み取り、u-blox LTE通信を使用してクラウドサーバーに詳細レポートを送信します。</li>
+            <li><strong>Cameraスイッチ:</strong> Hostに接続されている監視カメラを瞬時に起動し、4枚の連続写真を撮影してカメラ映像データをインターネットサーバー側へ高速送信します。</li>
+          </ul>
+        </div>
+        <div class="proto-img-container">
+          <img src="../images/ProtoHw2.png" alt="プロトタイプ Host基板の動作スイッチ部(Query/Camera)" class="proto-img">
+        </div>
+      </div>
+
+      <!-- 写真3: Device基板の全景とスイッチ部 (Report) -->
+      <div class="proto-grid">
+        <div class="proto-img-container">
+          <img src="../images/ProtoHw3.png" alt="プロトタイプ Device基板の全景とスイッチ部(Report)" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: #9c27b0;">
+          <span class="spec-tag" style="background: rgba(156, 39, 176, 0.15); color: #ce93d8;">Device側 多種センサー ＆ スイッチ</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Device基板の全景 ＆ Reportスイッチ部</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            エッジデバイスのデバイス側（STMicro NUCLEO-C071RB）には、<strong>Report UIスイッチ</strong>および各種環境センサーが搭載されています。<br><br>
+            <strong>Reportスイッチ</strong>を押すと、UIBバス経由でHost側に自律的な通知イベントを発行。デバイス内に実装されている<strong>加速度センサ、温度センサ、湿度センサ、距離センサ</strong>の計測値を即座に読み取り、最新のデバイス情報をインターネットサーバー側へ送信します。
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2. インターネットサーバ側の動作 (Viewer画面) -->
+    <div class="proto-section" style="margin-top: 5rem;">
+      <h2 class="gradient-text-alt" style="font-size: 2.3rem; margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem;">
+        2. インターネットサーバー側のリアルタイム受信動作（Viewer画面）
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2.5rem;">
+        インターネット上の監視サーバーをリアルタイムにモニターする<strong>専用Viewer画面</strong>です。<br>
+        エッジデバイスで発生した各種イベントを受信すると、画面上に<strong>「デバイスID」「イベント発生時刻」「電波強度（RSSI）」「通知内容・センサー数値」</strong>がリアルタイムにストリーミング表示されます。
+      </p>
+
+      <!-- 写真4: エッジデバイスの起動通知 -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-img-container">
+          <img src="../images/ProtoDemo1.png" alt="エッジデバイスの起動通知 (SystemStart)" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: #34a853;">
+          <span class="spec-tag" style="background: rgba(52, 168, 83, 0.15); color: #81c784;">SystemStart イベント</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">エッジデバイスの起動通知</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            エッジデバイスの電源が投入されシステムがブートすると、即座にLTE通信経由で監視サーバーへ <strong><code>SystemStart</code></strong> の起動通知が送信されます。<br>
+            Viewer画面にて、デバイスID、起動時刻、通信電波強度が正常に受信・記録されていることを確認できます。
+          </p>
+        </div>
+      </div>
+
+      <!-- 写真5: エッジデバイスの起動とデバイスイベント通知 -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-desc" style="border-left-color: var(--accent-yellow);">
+          <span class="spec-tag">SensorDiscovered / SensorQuery</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">デバイス接続検知 ＆ センサー問合せ通知</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            エッジデバイスのDevice側基板が起動し、UIBバスを介してHost側が認識すると、自動的に <strong><code>SensorDiscovered</code></strong> と <strong><code>SensorQuery</code></strong> の通知がサーバーへ送信されます。<br>
+            バスに新しいセンサーモジュールが挿入されたことをHostとクラウドサーバーが瞬時に自律認識するプラグ＆プレイの動作が実証されています。
+          </p>
+        </div>
+        <div class="proto-img-container">
+          <img src="../images/ProtoDemo2.png" alt="エッジデバイスの起動とデバイスイベント通知" class="proto-img">
+        </div>
+      </div>
+
+      <!-- 写真6: 監視カメラ撮影通知 -->
+      <div class="proto-grid">
+        <div class="proto-img-container">
+          <img src="../images/ProtoDemo3.png" alt="監視カメラ撮影通知と写真転送" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: #ea4335;">
+          <span class="spec-tag" style="background: rgba(234, 67, 53, 0.15); color: #ff8a65;">CameraTrigger ＆ 画像転送</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">監視カメラ撮影通知 ＆ 画像ストリーミング</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            エッジデバイスのCameraスイッチが押されると、監視カメラが起動して写真が連続撮影され、LTE経由でインターネットサーバーへ即座に画像データが転送されます。<br><br>
+            サーバー側のViewer画面にて、<strong>撮影されたデバイスID、撮影タイムスタンプ、電波強度情報とともに、実際の撮影映像写真</strong>を即座に確認できます。
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 総括ボックス -->
+    <div class="glass-panel doc-section" style="margin-top: 4rem; border-left: 4px solid var(--accent-yellow); background: rgba(251, 188, 4, 0.04);">
+      <h2 style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem;">実機検証による結論 ＆ スケーラビリティの実証</h2>
+      <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-primary);">
+        今回のバラック試作プロトタイプ試験により、<strong>「6線式UIBバスによる異種マイコン間（ESP32-S3 ＋ STMicro C071）のシームレスな相互通信」「自律的なセンサー検知」「LTE経由での画像・テレメトリの即時クラウド同期」</strong>が設計通り完璧に動作することが実機にて証明されました。<br><br>
+        さらに、これらすべてのファームウェアおよびクラウドシステムが<strong>AIバイブコーディングにより短期間で一元構築可能</strong>であることが実証され、本プロジェクトの圧倒的な開発スピードと量産実現性が裏付けられました。
+      </p>
+    </div>
+
+    <!-- フッター -->
+    <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-secondary); font-size: 0.95rem;">
+      <p>&copy; 2026 Gontaro Kitazumi. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+
+<!-- Build Refreshed: 2026-08-16 16:57:31 -->

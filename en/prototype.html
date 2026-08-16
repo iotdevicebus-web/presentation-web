@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal IoT Bus (UIB) | Hardware Prototype Verification & Live Telemetry Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .proto-section {
+      margin-bottom: 3.5rem;
+    }
+    .proto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .proto-img-container {
+      background: rgba(10, 25, 47, 0.6);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .proto-img-container:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-yellow);
+    }
+    .proto-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+    .proto-desc {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid var(--primary-color);
+    }
+    .spec-tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: rgba(251, 188, 4, 0.15);
+      color: var(--accent-yellow);
+      margin-bottom: 0.8rem;
+    }
+    .badge-ai {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: rgba(52, 168, 83, 0.15);
+      color: #81c784;
+      margin-bottom: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">&larr; Back to Portal</a>
+      <a href="../jp/prototype.html" style="color: var(--text-primary); text-decoration: none; font-weight: 600; background: var(--glass-bg); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--glass-border);">日本語 &rarr;</a>
+    </div>
+
+    <!-- Page Header -->
+    <div class="glass-panel" style="border-left: 4px solid var(--accent-yellow); padding: 3rem; margin-bottom: 3.5rem;">
+      <span class="category-badge cat-gov" style="margin-bottom: 0.8rem; display: inline-block;">Hardware Prototype & Live Telemetry Verification</span>
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 0.5rem;">Verification Prototype Live Hardware Report</h1>
+      <h2 style="font-size: 1.5rem; color: var(--accent-yellow); font-weight: 600;">
+        UIB Interconnect Verification & 100% AI Vibe-Coding Implementation
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-top: 1.2rem;">
+        To thoroughly validate the operational integrity of the Universal IoT Bus (UIB) standard, a hardware testbed was assembled using functional components for comprehensive verification.<br>
+        The system circuit is composed of: <strong>[Host Side] Universal Reference Kit [ESP32-S3 + u-blox LTE]</strong> and <strong>[Device Side] STMicroelectronics NUCLEO-C071RB Board</strong>.<br>
+        This report details live edge events (sensor readings & camera triggers) received in real-time on our internet monitoring server and visualized on the dedicated Viewer console.
+      </p>
+      <div style="margin-top: 1.5rem; padding: 1.2rem; background: rgba(52, 168, 83, 0.08); border-radius: 12px; border: 1px solid rgba(52, 168, 83, 0.3);">
+        <span class="badge-ai">🤖 100% AI Vibe-Coding Implementation</span>
+        <p style="font-size: 1.1rem; line-height: 1.6; color: #fff; margin-top: 0.3rem;">
+          All software operating across these systems—from edge micro-firmware to internet cloud monitoring servers—was <strong>fully developed and verified via AI-driven Vibe Coding</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- 1. Hardware Prototype Live Setup -->
+    <div class="proto-section">
+      <h2 class="gradient-text" style="font-size: 2.3rem; margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem;">
+        1. Live Hardware Prototype Configuration
+      </h2>
+
+      <!-- Photo 1: Host + Device Overview -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-img-container">
+          <img src="../images/ProtoHw1.png" alt="Prototype Host Board + Device Board Overview" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: var(--accent-yellow);">
+          <span class="spec-tag">System Overview</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Prototype Host Board + Device Board Overview</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            The prototype comprises a <strong>surveillance camera, power battery, IoT Host unit, and IoT Device unit</strong>.<br><br>
+            The Host and Device boards are interconnected via the standard <strong>6-wire <a href="glossary.html#term-uib" style="color: var(--accent-yellow); text-decoration: underline;">UIB (Universal IoT Bus)</a></strong> interface, guaranteeing plug-and-play data transmission and power coordination.
+          </p>
+        </div>
+      </div>
+
+      <!-- Photo 2: Host Switches (Query/Camera) -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-desc" style="border-left-color: var(--primary-color);">
+          <span class="spec-tag" style="background: rgba(26, 115, 232, 0.15); color: #82b1ff;">Host UI Controls</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Host Board Controls (Query / Camera)</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            The edge Host unit integrates two primary verification UI switches:
+          </p>
+          <ul class="bullet-list" style="font-size: 1.1rem !important; line-height: 1.8; margin-top: 0.8rem;">
+            <li><strong>Query Switch:</strong> Instantly reads the state of connected Device nodes and transmits a comprehensive diagnostic report to the cloud via u-blox LTE cellular.</li>
+            <li><strong>Camera Switch:</strong> Triggers the connected surveillance camera to capture 4 consecutive frames and streams the image sequence directly to the internet server.</li>
+          </ul>
+        </div>
+        <div class="proto-img-container">
+          <img src="../images/ProtoHw2.png" alt="Prototype Host Board Operation Switches (Query/Camera)" class="proto-img">
+        </div>
+      </div>
+
+      <!-- Photo 3: Device Board Overview & Report Switch -->
+      <div class="proto-grid">
+        <div class="proto-img-container">
+          <img src="../images/ProtoHw3.png" alt="Prototype Device Board and Report Switch" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: #9c27b0;">
+          <span class="spec-tag" style="background: rgba(156, 39, 176, 0.15); color: #ce93d8;">Device Multi-Sensors & UI</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Device Board & Report Switch Unit</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            The Device unit (STMicro NUCLEO-C071RB) houses a <strong>Report UI Switch</strong> alongside integrated environmental sensors.<br><br>
+            Pressing the <strong>Report Switch</strong> emits an autonomous event notification to the Host over UIB. The device reads its <strong>accelerometer, temperature, humidity, and proximity sensors</strong>, immediately dispatching live sensor telemetry to the internet server.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2. Internet Server & Viewer Telemetry -->
+    <div class="proto-section" style="margin-top: 5rem;">
+      <h2 class="gradient-text-alt" style="font-size: 2.3rem; margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem;">
+        2. Internet Server Real-Time Telemetry (Viewer Console)
+      </h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2.5rem;">
+        The dedicated <strong>Viewer Console</strong> monitors the cloud receiver in real time. Upon receiving edge events, the console displays <strong>Device ID, Timestamp, Cellular Signal Strength (RSSI), and Telemetry Payloads</strong> with zero latency.
+      </p>
+
+      <!-- Photo 4: SystemStart Notification -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-img-container">
+          <img src="../images/ProtoDemo1.png" alt="Edge Device Boot Notification (SystemStart)" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: #34a853;">
+          <span class="spec-tag" style="background: rgba(52, 168, 83, 0.15); color: #81c784;">SystemStart Event</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Edge Device Startup Notification</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            When the edge device powers on, a <strong><code>SystemStart</code></strong> boot notification is immediately dispatched via cellular LTE.<br>
+            The Viewer console logs the device ID, startup timestamp, and radio signal strength.
+          </p>
+        </div>
+      </div>
+
+      <!-- Photo 5: Device Discovery & Query -->
+      <div class="proto-grid" style="margin-bottom: 3.5rem;">
+        <div class="proto-desc" style="border-left-color: var(--accent-yellow);">
+          <span class="spec-tag">SensorDiscovered / SensorQuery</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Node Discovery & Sensor Query Alerts</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            When the Device board initializes and is detected by the Host over UIB, <strong><code>SensorDiscovered</code></strong> and <strong><code>SensorQuery</code></strong> notifications stream to the server.<br>
+            This confirms autonomous plug-and-play recognition of new sensor modules across the bus.
+          </p>
+        </div>
+        <div class="proto-img-container">
+          <img src="../images/ProtoDemo2.png" alt="Device Discovery and Event Notification" class="proto-img">
+        </div>
+      </div>
+
+      <!-- Photo 6: Surveillance Camera Capture & Stream -->
+      <div class="proto-grid">
+        <div class="proto-img-container">
+          <img src="../images/ProtoDemo3.png" alt="Surveillance Camera Capture and Photo Transfer" class="proto-img">
+        </div>
+        <div class="proto-desc" style="border-left-color: #ea4335;">
+          <span class="spec-tag" style="background: rgba(234, 67, 53, 0.15); color: #ff8a65;">CameraTrigger & Image Stream</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Camera Capture Notification & Image Transfer</h3>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary);">
+            When the Camera switch is triggered, the camera captures photos and transfers high-resolution image data to the internet server via LTE.<br><br>
+            The cloud Viewer displays the <strong>captured surveillance image alongside device ID, timestamp, and signal metrics</strong>.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Summary Box -->
+    <div class="glass-panel doc-section" style="margin-top: 4rem; border-left: 4px solid var(--accent-yellow); background: rgba(251, 188, 4, 0.04);">
+      <h2 style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem;">Live Hardware Validation & Feasibility Takeaways</h2>
+      <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-primary);">
+        This prototype successfully proves <strong>"seamless 6-wire UIB bus interoperability between heterogeneous MCUs (ESP32-S3 + STMicro C071)", "autonomous sensor discovery", and "instant cellular cloud telemetry synchronization"</strong> on physical silicon.<br><br>
+        Furthermore, developing the entire firmware and server stack via <strong>AI Vibe-Coding</strong> demonstrates unprecedented engineering velocity and rapid mass-production feasibility.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-secondary); font-size: 0.95rem;">
+      <p>&copy; 2026 Gontaro Kitazumi. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+
+<!-- Build Refreshed: 2026-08-16 16:57:31 -->
